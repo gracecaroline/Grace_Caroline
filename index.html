@@ -1,0 +1,2883 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grace Caroline | Portofolio & Tugas Sekolah Kelas 11.3</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Website portofolio pribadi dan kumpulan tugas sekolah Grace Caroline (Kelas 11.3). Dilengkapi jadwal pelajaran harian serta catatan belajar Informatika dan Bahasa Indonesia.">
+  <meta name="author" content="Grace Caroline">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS Custom Configuration for Soft Pastel Pink Theme & Dark Mode -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            pastel: {
+              rose: '#FFF5F6',      /* Background pastel pink sangat lembut */
+              pinklight: '#FFE3E8', /* Aksen pink muda */
+              pink: '#FFAEBE',      /* Pink cerah pastel */
+              pinkdark: '#D15E75',  /* Pink tua untuk teks kontras */
+              purple: '#F5E6FF',    /* Aksen ungu pastel */
+              purpledark: '#8E5BB0',/* Teks ungu */
+              blue: '#E3F2FD',      /* Aksen biru pastel */
+              bluedark: '#427093',  /* Teks biru */
+              slate: '#1E293B',
+              gray: '#64748B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Transisi halus untuk navigasi SPA & Dark Mode */
+    .section-transition {
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    /* Scrollbar minimalis yang estetis */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #FFE3E8;
+      border-radius: 9px;
+    }
+
+    .dark ::-webkit-scrollbar-thumb {
+      background: #334155;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FFAEBE;
+    }
+
+    .dark ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+
+    /* Animasi background gradient bergerak lembut */
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .animated-pastel-bg {
+      background: linear-gradient(-45deg, #FFF5F6, #FFE3E8, #FAF0F5, #F5E6FF);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    .dark .animated-pastel-bg {
+      background: linear-gradient(-45deg, #0F172A, #1E1B2E, #181024, #0F172A);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    /* Effect Glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 227, 232, 0.6);
+    }
+
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .dark .glass-nav {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+  </style>
+</head>
+
+<body
+  class="animated-pastel-bg text-pastel-slate dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased transition-colors duration-300 selection:bg-pastel-pinklight selection:text-pastel-pinkdark">
+
+  <!-- ==================== HEADER & NAVIGASI ATAS ==================== -->
+  <header
+    class="sticky top-0 z-40 w-full glass-nav border-b border-pastel-pinklight/50 dark:border-slate-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+
+        <!-- Logo & Identitas Brand -->
+        <div class="flex items-center space-x-3 cursor-pointer group" onclick="switchTab('dashboard')">
+          <div
+            class="relative w-10 h-10 md:w-11 md:h-11 rounded-2xl bg-gradient-to-tr from-pastel-pink to-pastel-pinklight dark:from-pink-900 dark:to-purple-900 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
+            <span class="text-white dark:text-pink-200 font-serif font-black text-xl">G</span>
+            <span class="absolute -top-1 -right-1 w-3 h-3 bg-pink-400 rounded-full animate-ping"></span>
+          </div>
+          <div>
+            <h1 class="font-serif font-black text-lg md:text-xl tracking-tight text-pastel-slate dark:text-white"
+              id="header-brand-name">
+              Grace C.
+            </h1>
+            <p class="text-[10px] md:text-xs font-semibold text-pastel-pinkdark dark:text-pink-300 tracking-wider">
+              PORTFOLIO & TUGAS 11.3
+            </p>
+          </div>
+        </div>
+
+        <!-- Menu Navigasi Utama Desktop (Berada di Atas) -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <button onclick="switchTab('dashboard')" id="nav-dashboard"
+            class="px-3.5 py-2 rounded-xl text-xs lg:text-sm font-bold transition-all duration-200 text-pastel-pinkdark dark:text-pink-300 bg-pastel-pinklight/60 dark:bg-pink-950/40 border border-pastel-pink/30 flex items-center space-x-1.5 shadow-2xs">
+            <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+            <span>Dashboard</span>
+          </button>
+          <button onclick="switchTab('jadwal')" id="nav-jadwal"
+            class="px-3.5 py-2 rounded-xl text-xs lg:text-sm font-bold transition-all duration-200 text-pastel-gray dark:text-slate-400 hover:text-pastel-pinkdark dark:hover:text-pink-300 hover:bg-pastel-rose dark:hover:bg-slate-800 flex items-center space-x-1.5">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Jadwal Pelajaran 11.3</span>
+          </button>
+          <button onclick="switchTab('profil')" id="nav-profil"
+            class="px-3.5 py-2 rounded-xl text-xs lg:text-sm font-bold transition-all duration-200 text-pastel-gray dark:text-slate-400 hover:text-pastel-pinkdark dark:hover:text-pink-300 hover:bg-pastel-rose dark:hover:bg-slate-800 flex items-center space-x-1.5">
+            <i data-lucide="user" class="w-4 h-4"></i>
+            <span>Profil</span>
+          </button>
+          <button onclick="switchTab('informatika')" id="nav-informatika"
+            class="px-3.5 py-2 rounded-xl text-xs lg:text-sm font-bold transition-all duration-200 text-pastel-gray dark:text-slate-400 hover:text-pastel-pinkdark dark:hover:text-pink-300 hover:bg-pastel-rose dark:hover:bg-slate-800 flex items-center space-x-1.5">
+            <i data-lucide="binary" class="w-4 h-4"></i>
+            <span>Informatika</span>
+          </button>
+          <button onclick="switchTab('bahasa_indonesia')" id="nav-bahasa_indonesia"
+            class="px-3.5 py-2 rounded-xl text-xs lg:text-sm font-bold transition-all duration-200 text-pastel-gray dark:text-slate-400 hover:text-pastel-pinkdark dark:hover:text-pink-300 hover:bg-pastel-rose dark:hover:bg-slate-800 flex items-center space-x-1.5">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            <span>Bahasa Indonesia</span>
+          </button>
+        </nav>
+
+        <!-- Tombol Aksi Kanan (Toggle Dark Mode, Upload Quick Setting, & Mobile Menu) -->
+        <div class="flex items-center space-x-2 md:space-x-3">
+          <!-- Tombol Setting Profil / Upload Foto Quick -->
+          <button onclick="openEditProfileModal()" title="Setting Profil & Upload Foto"
+            class="p-2 rounded-xl bg-pastel-rose dark:bg-slate-800 text-pastel-pinkdark dark:text-pink-300 hover:bg-pastel-pinklight dark:hover:bg-slate-700 transition-all border border-pastel-pinklight/40 dark:border-slate-700 flex items-center space-x-1 text-xs font-semibold">
+            <i data-lucide="settings" class="w-4.5 h-4.5"></i>
+            <span class="hidden sm:inline">Setting</span>
+          </button>
+
+          <!-- Toggle Dark / Light Mode -->
+          <button onclick="toggleDarkMode()" id="btn-theme-toggle" title="Ubah Mode Tampilan"
+            class="p-2.5 rounded-xl bg-pastel-rose dark:bg-slate-800 text-pastel-pinkdark dark:text-pink-300 hover:bg-pastel-pinklight dark:hover:bg-slate-700 transition-all border border-pastel-pinklight/40 dark:border-slate-700">
+            <i data-lucide="moon" id="theme-toggle-icon" class="w-4.5 h-4.5"></i>
+          </button>
+
+          <!-- Button Tambah Post Baru -->
+          <button onclick="openAddPostModal()"
+            class="hidden lg:flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-pastel-pink hover:bg-pastel-pinkdark text-white font-bold text-xs shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            <span>Posting Tugas</span>
+          </button>
+
+          <!-- Hamburger Button Mobile -->
+          <button onclick="toggleMobileMenu()" id="btn-mobile-menu"
+            class="md:hidden p-2.5 rounded-xl bg-pastel-rose dark:bg-slate-800 text-pastel-slate dark:text-slate-200">
+            <i data-lucide="menu" id="icon-mobile-menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigasi Mobile (Tampil saat Hamburger diklik) -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 pt-2 border-t border-pastel-pinklight/30 dark:border-slate-800 space-y-1">
+        <button onclick="switchTab('dashboard'); toggleMobileMenu()"
+          class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold text-pastel-pinkdark dark:text-pink-300 bg-pastel-pinklight/40 dark:bg-pink-950/40 flex items-center space-x-2">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Dashboard</span>
+        </button>
+        <button onclick="switchTab('jadwal'); toggleMobileMenu()"
+          class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold text-pastel-gray dark:text-slate-300 hover:bg-pastel-rose dark:hover:bg-slate-800 flex items-center space-x-2">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Jadwal Pelajaran Kelas 11.3</span>
+        </button>
+        <button onclick="switchTab('profil'); toggleMobileMenu()"
+          class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold text-pastel-gray dark:text-slate-300 hover:bg-pastel-rose dark:hover:bg-slate-800 flex items-center space-x-2">
+          <i data-lucide="user" class="w-4 h-4"></i>
+          <span>Profil</span>
+        </button>
+        <button onclick="switchTab('informatika'); toggleMobileMenu()"
+          class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold text-pastel-gray dark:text-slate-300 hover:bg-pastel-rose dark:hover:bg-slate-800 flex items-center space-x-2">
+          <i data-lucide="binary" class="w-4 h-4"></i>
+          <span>Informatika</span>
+        </button>
+        <button onclick="switchTab('bahasa_indonesia'); toggleMobileMenu()"
+          class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold text-pastel-gray dark:text-slate-300 hover:bg-pastel-rose dark:hover:bg-slate-800 flex items-center space-x-2">
+          <i data-lucide="book-open" class="w-4 h-4"></i>
+          <span>Bahasa Indonesia</span>
+        </button>
+
+        <div class="pt-2 border-t border-pastel-pinklight/20 dark:border-slate-800 flex justify-between items-center px-2">
+          <button onclick="openAddPostModal(); toggleMobileMenu()"
+            class="w-full py-2.5 bg-pastel-pink text-white rounded-xl font-bold text-xs flex items-center justify-center space-x-2">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            <span>Posting Tugas Baru</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== KONTEN UTAMA (SPA CONTAINER) ==================== -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+
+    <!-- ==================== SECTION: DASHBOARD ==================== -->
+    <section id="section-dashboard" class="section-transition opacity-100 block space-y-8">
+      
+      <!-- Welcome Hero Banner dengan Tema Pastel Pink -->
+      <div class="relative glass-card rounded-3xl p-6 md:p-10 overflow-hidden shadow-sm">
+        <!-- Hiasan Geometri Soft Pastel -->
+        <div class="absolute -top-16 -right-16 w-64 h-64 bg-pastel-pinklight/50 dark:bg-pink-900/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-pastel-purple/50 dark:bg-purple-900/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+          <div class="space-y-3 text-center md:text-left flex-grow">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-pastel-rose dark:bg-pink-950/50 border border-pastel-pinklight/50 dark:border-pink-900/40 text-pastel-pinkdark dark:text-pink-300 text-xs font-bold">
+              <span>🌸 Selamat Datang di Portofolio Saya</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-serif font-black text-pastel-slate dark:text-white leading-tight">
+              Halo, Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-pastel-pinkdark via-pink-500 to-purple-600">Grace Caroline</span> 👋
+            </h2>
+            <p class="text-xs md:text-base text-pastel-gray dark:text-slate-350 max-w-2xl font-medium leading-relaxed" id="dashboard-bio-desc">
+              Siswi Kelas 11.3 SMA Cinta Kasih Tzu Chi. Website ini dirancang secara khusus untuk menampilkan profil pribadi, jadwal pelajaran harian, serta publikasi kumpulan tugas sekolah bidang Informatika dan Bahasa Indonesia.
+            </p>
+            <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3">
+              <button onclick="switchTab('profil')"
+                class="px-5 py-2.5 rounded-xl bg-pastel-pink hover:bg-pastel-pinkdark text-white font-bold text-xs shadow-xs hover:shadow-md transition-all duration-200 flex items-center space-x-2">
+                <i data-lucide="user" class="w-4 h-4"></i>
+                <span>Lihat Profil Saya</span>
+              </button>
+              <button onclick="switchTab('jadwal')"
+                class="px-5 py-2.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-pastel-rose dark:hover:bg-slate-750 text-pastel-pinkdark dark:text-pink-300 border border-pastel-pinklight dark:border-slate-700 font-bold text-xs transition-all duration-200 flex items-center space-x-2">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+                <span>Jadwal Pelajaran 11.3</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Foto Profile Quick Display di Dashboard -->
+          <div class="relative shrink-0 group cursor-pointer" onclick="openEditProfileModal()" title="Klik untuk ubah foto profil">
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-3xl border-4 border-white dark:border-slate-800 shadow-md overflow-hidden bg-pastel-rose dark:bg-slate-800 relative">
+              <img id="dashboard-avatar-img" src="avatar.png" alt="Grace Caroline" class="w-full h-full object-cover" onerror="this.src='https://api.dicebear.com/7.x/adventurer/svg?seed=Grace&backgroundColor=ffb8c6'">
+              <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-[10px] font-bold p-1 text-center">
+                <i data-lucide="camera" class="w-5 h-5 mb-1"></i>
+                <span>Ganti Foto</span>
+              </div>
+            </div>
+            <div class="absolute -bottom-2 -right-2 bg-white dark:bg-slate-800 p-2 rounded-2xl shadow-sm border border-pastel-pinklight/40 dark:border-slate-700 text-pastel-pinkdark dark:text-pink-300">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Widget Jadwal Hari Ini & Statistik Singkat -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Widget Jadwal Hari Ini -->
+        <div class="lg:col-span-2 glass-card rounded-3xl p-6 border border-pastel-pinklight/30 dark:border-slate-800 space-y-4" id="dashboard-schedule-widget">
+          <!-- Diisi secara dinamis oleh JavaScript -->
+        </div>
+
+        <!-- Cards Ringkasan Statistik & Kutipan Belajar -->
+        <div class="space-y-6">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="glass-card rounded-2xl p-4 border border-pastel-pinklight/40 dark:border-slate-800 text-center space-y-1">
+              <div class="w-8 h-8 mx-auto rounded-xl bg-pastel-rose dark:bg-pink-950/60 text-pastel-pinkdark dark:text-pink-300 flex items-center justify-center">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+              </div>
+              <p class="text-2xl font-black text-pastel-slate dark:text-white" id="stat-total-posts">7</p>
+              <p class="text-[10px] font-bold uppercase tracking-wider text-pastel-gray dark:text-slate-400">Total Postingan</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-4 border border-pastel-pinklight/40 dark:border-slate-800 text-center space-y-1">
+              <div class="w-8 h-8 mx-auto rounded-xl bg-pastel-blue dark:bg-blue-950/60 text-pastel-bluedark dark:text-blue-300 flex items-center justify-center">
+                <i data-lucide="binary" class="w-4 h-4"></i>
+              </div>
+              <p class="text-2xl font-black text-pastel-slate dark:text-white" id="stat-info-posts">3</p>
+              <p class="text-[10px] font-bold uppercase tracking-wider text-pastel-gray dark:text-slate-400">Informatika</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-4 border border-pastel-pinklight/40 dark:border-slate-800 text-center space-y-1">
+              <div class="w-8 h-8 mx-auto rounded-xl bg-pastel-purple dark:bg-purple-950/60 text-pastel-purpledark dark:text-purple-300 flex items-center justify-center">
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+              </div>
+              <p class="text-2xl font-black text-pastel-slate dark:text-white" id="stat-indo-posts">4</p>
+              <p class="text-[10px] font-bold uppercase tracking-wider text-pastel-gray dark:text-slate-400">B. Indonesia</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-4 border border-pastel-pinklight/40 dark:border-slate-800 text-center space-y-1">
+              <div class="w-8 h-8 mx-auto rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 flex items-center justify-center">
+                <i data-lucide="award" class="w-4 h-4"></i>
+              </div>
+              <p class="text-2xl font-black text-pastel-slate dark:text-white">11.3</p>
+              <p class="text-[10px] font-bold uppercase tracking-wider text-pastel-gray dark:text-slate-400">Kelas SMA</p>
+            </div>
+          </div>
+
+          <!-- Kutipan Inspiratif Hari Ini -->
+          <div class="glass-card rounded-3xl p-5 border border-pastel-pinklight/30 dark:border-slate-800 space-y-2 relative overflow-hidden">
+            <i data-lucide="quote" class="w-12 h-12 absolute -bottom-2 -right-2 text-pastel-pinklight/40 dark:text-slate-800 pointer-events-none"></i>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-pastel-pinkdark dark:text-pink-400">Kutipan Inspiratif</span>
+            <p class="text-xs italic text-pastel-slate dark:text-slate-300 leading-relaxed font-serif" id="quote-text">
+              "Pendidikan bukanlah proses mengisi wadah yang kosong, melainkan menyalakan api pikiran agar terus berkembang."
+            </p>
+            <p class="text-[10px] font-bold text-pastel-gray dark:text-slate-400 text-right" id="quote-author">— Grace Caroline</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kumpulan Tugas Terbaru & Sticky Notes Pengingat Belajar -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Kolom Kiri: Posting Tugas Terbaru (2 Kolom) -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-serif font-black text-pastel-slate dark:text-white flex items-center space-x-2">
+              <i data-lucide="sparkles" class="w-5 h-5 text-pastel-pinkdark dark:text-pink-400"></i>
+              <span>Postingan Tugas Sekolah Terbaru</span>
+            </h3>
+            <button onclick="switchTab('informatika')" class="text-xs font-bold text-pastel-pinkdark dark:text-pink-400 hover:underline">
+              Lihat Semua →
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="recent-posts-container">
+            <!-- Diisi secara dinamis oleh JavaScript -->
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Interactive Sticky Notes Pengingat Belajar -->
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-serif font-black text-pastel-slate dark:text-white flex items-center space-x-2">
+              <i data-lucide="sticky-note" class="w-5 h-5 text-amber-500"></i>
+              <span>Catatan Pengingat Belajar</span>
+            </h3>
+            <button onclick="addStickyNotePrompt()" class="text-xs bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 px-2.5 py-1 rounded-xl font-bold border border-amber-200 dark:border-amber-800 hover:scale-105 transition-all">
+              + Tambah
+            </button>
+          </div>
+
+          <div class="space-y-3" id="sticky-notes-container">
+            <!-- Diisi secara dinamis oleh JavaScript -->
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION: JADWAL PELAJARAN KELAS 11.3 ==================== -->
+    <section id="section-jadwal" class="section-transition opacity-0 hidden space-y-6">
+      
+      <!-- Header Jadwal -->
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-pastel-pinklight/30 dark:border-slate-800 pb-4">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-serif font-black text-pastel-slate dark:text-white flex items-center space-x-2">
+            <span class="p-2 bg-pastel-pinklight dark:bg-pink-950/60 text-pastel-pinkdark dark:text-pink-300 rounded-xl">
+              <i data-lucide="calendar" class="w-6 h-6"></i>
+            </span>
+            <span>Jadwal Pelajaran Kelas 11.3</span>
+          </h2>
+          <p class="text-xs md:text-sm text-pastel-gray dark:text-slate-400 mt-1">
+            Jadwal harian kelas 11.3. Didesain secara interaktif dalam 5 grid besar (Senin – Jumat).
+          </p>
+        </div>
+
+        <!-- Legenda Kategori -->
+        <div class="flex flex-wrap gap-2 text-[10px] font-bold">
+          <span class="px-2 py-1 rounded-md bg-blue-50/70 text-blue-800 border border-blue-100/50 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-900/30">Sains & Komputer</span>
+          <span class="px-2 py-1 rounded-md bg-purple-50/70 text-purple-800 border border-purple-100/50 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-900/30">Ilmu Sosial</span>
+          <span class="px-2 py-1 rounded-md bg-pink-50/70 text-pink-850 border border-pink-100/50 dark:bg-pink-950/30 dark:text-pink-300 dark:border-pink-900/20">Bahasa</span>
+          <span class="px-2 py-1 rounded-md bg-emerald-50/70 text-emerald-800 border border-emerald-100/50 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-900/30">Karakter & Praktik</span>
+          <span class="px-2 py-1 rounded-md bg-slate-50/80 text-slate-600 border border-slate-100/70 dark:bg-slate-900/40 dark:text-slate-400 dark:border-slate-800/40">Istirahat</span>
+        </div>
+      </div>
+
+      <!-- Pemilih Hari untuk Mobile (Tab) -->
+      <div class="flex md:hidden justify-between border-b border-pastel-pinklight/20 dark:border-slate-850 pb-2 mb-4 overflow-x-auto gap-1">
+        <button onclick="selectScheduleDay('senin')" id="btn-day-senin" class="px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 bg-pastel-pink text-white dark:bg-pink-500 shadow-2xs">Senin</button>
+        <button onclick="selectScheduleDay('selasa')" id="btn-day-selasa" class="px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 text-pastel-gray dark:text-slate-400">Selasa</button>
+        <button onclick="selectScheduleDay('rabu')" id="btn-day-rabu" class="px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 text-pastel-gray dark:text-slate-400">Rabu</button>
+        <button onclick="selectScheduleDay('kamis')" id="btn-day-kamis" class="px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 text-pastel-gray dark:text-slate-400">Kamis</button>
+        <button onclick="selectScheduleDay('jumat')" id="btn-day-jumat" class="px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 text-pastel-gray dark:text-slate-400">Jumat</button>
+      </div>
+
+      <!-- LAYOUT 5 GRID BESAR UTAMA SESUAI KETENTUAN -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5" id="schedule-5grid-container">
+        <!-- Cards 5 Hari (Senin, Selasa, Rabu, Kamis, Jumat) dimasukkan oleh JS -->
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION: PROFIL ==================== -->
+    <section id="section-profil" class="section-transition opacity-0 hidden space-y-8">
+      <div class="max-w-4xl mx-auto glass-card rounded-3xl shadow-sm overflow-hidden transition-all duration-300">
+
+        <!-- Header Profil / Background Cover Pastel -->
+        <div
+          class="h-48 bg-gradient-to-r from-pastel-pinklight via-pastel-pink to-pastel-purple dark:from-pink-900/40 dark:via-purple-900/40 dark:to-slate-800 relative">
+          <div class="absolute -top-12 -left-12 w-40 h-40 bg-white/20 dark:bg-white/5 rounded-full filter blur-xl"></div>
+          <div class="absolute -bottom-16 -right-16 w-56 h-56 bg-white/10 dark:bg-white/5 rounded-full filter blur-2xl"></div>
+        </div>
+
+        <div class="px-6 pb-8 md:px-12 md:pb-12 relative">
+          <!-- Avatar & Edit Profile Button Row -->
+          <div
+            class="flex flex-col sm:flex-row sm:items-end justify-between -mt-20 sm:-mt-24 space-y-4 sm:space-y-0 pb-6 border-b border-pastel-pinklight/40 dark:border-slate-800">
+            <div
+              class="flex flex-col sm:flex-row sm:items-end space-y-4 sm:space-y-0 sm:space-x-6 text-center sm:text-left">
+              <div
+                class="relative w-36 h-36 md:w-40 md:h-40 rounded-full border-4 border-white dark:border-slate-900 shadow-md overflow-hidden bg-white dark:bg-slate-800 mx-auto sm:mx-0 shrink-0">
+                <img src="avatar.png" alt="Grace Caroline Avatar" id="profile-avatar-img"
+                  class="w-full h-full object-cover"
+                  onerror="this.src='https://api.dicebear.com/7.x/adventurer/svg?seed=Grace&backgroundColor=ffb8c6'">
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-2xl md:text-3xl font-serif font-black text-pastel-slate dark:text-white"
+                  id="profile-name-title">Grace Caroline</h2>
+                <p class="text-pastel-pinkdark dark:text-pink-400 font-semibold text-sm" id="profile-role-title">Pelajar
+                  SMA Kelas 11.3 / Pembuat Konten Digital</p>
+
+                <!-- Sosial Media Links -->
+                <div class="flex justify-center sm:justify-start gap-3 mt-3" id="profile-social-container">
+                  <!-- Diisi secara dinamis via JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Button Ubah Profil / Upload Foto -->
+            <button onclick="openEditProfileModal()"
+              class="px-5 py-2.5 rounded-xl bg-pastel-rose hover:bg-pastel-pinklight dark:bg-slate-800 dark:hover:bg-slate-700 text-pastel-pinkdark dark:text-pink-300 font-bold text-xs border border-pastel-pinklight dark:border-slate-700 transition-all flex items-center justify-center space-x-2 shadow-2xs">
+              <i data-lucide="edit-3" class="w-4 h-4"></i>
+              <span>Setting Profil & Foto</span>
+            </button>
+          </div>
+
+          <!-- Body Profil: Bio, Pendidikan, Keahlian -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
+
+            <!-- Kolom Kiri (2 Kolom): Bio & Riwayat Pendidikan -->
+            <div class="md:col-span-2 space-y-6">
+              <div class="space-y-3">
+                <h3
+                  class="text-xs font-bold uppercase tracking-wider text-pastel-pinkdark dark:text-pink-400 flex items-center space-x-1.5">
+                  <i data-lucide="user-check" class="w-4 h-4"></i>
+                  <span>Tentang Saya</span>
+                </h3>
+                <div id="profile-bio-content" class="text-xs md:text-sm text-pastel-gray dark:text-slate-350 space-y-3 leading-relaxed">
+                  <!-- Bio diisi via JS -->
+                </div>
+              </div>
+
+              <!-- Riwayat Sekolah -->
+              <div class="space-y-3 pt-4 border-t border-pastel-pinklight/20 dark:border-slate-800">
+                <h3
+                  class="text-xs font-bold uppercase tracking-wider text-pastel-pinkdark dark:text-pink-400 flex items-center space-x-1.5">
+                  <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                  <span>Riwayat Pendidikan</span>
+                </h3>
+                <div class="space-y-3" id="profile-school-timeline">
+                  <!-- Diisi secara dinamis -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Kolom Kanan (1 Kolom): Tingkat Keahlian -->
+            <div class="space-y-4">
+              <h3
+                class="text-xs font-bold uppercase tracking-wider text-pastel-pinkdark dark:text-pink-400 flex items-center space-x-1.5">
+                <i data-lucide="zap" class="w-4 h-4"></i>
+                <span>Minat & Keahlian</span>
+              </h3>
+              <div class="space-y-4" id="profile-skills-container">
+                <!-- Diisi secara dinamis -->
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ==================== HOBI, MUSIK & MINI GAME FAVORIT ==================== -->
+          <div class="mt-10 pt-8 border-t border-pastel-pinklight/40 dark:border-slate-800 space-y-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-pastel-pinkdark dark:text-pink-400 flex items-center space-x-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-pastel-pinkdark dark:text-pink-400"></i>
+                <span>Musik & Mini Game Grace</span>
+              </h3>
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-pastel-pinklight dark:bg-pink-950/60 text-pastel-pinkdark dark:text-pink-300 border border-pastel-pink/30">
+                Interactive Zone
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              
+              <!-- Card 1: Media Player MP3 Full Music (Shawn Mendes, Camila Cabello - Señorita) -->
+              <div class="glass-card rounded-2xl p-5 border border-pastel-pinklight/60 dark:border-slate-800 space-y-4 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between border-b border-pastel-pinklight/30 dark:border-slate-800 pb-3">
+                    <div class="flex items-center space-x-2.5">
+                      <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-pink-500 to-rose-400 flex items-center justify-center text-white shadow-xs">
+                        <i data-lucide="music-4" class="w-4 h-4"></i>
+                      </div>
+                      <div>
+                        <h4 class="text-xs font-bold text-pastel-slate dark:text-white flex items-center space-x-1.5">
+                          <span>Media Player Musik</span>
+                          <span class="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-pink-100 dark:bg-pink-950 text-pink-600 dark:text-pink-300">Full Song</span>
+                        </h4>
+                        <p class="text-[10px] text-pastel-gray dark:text-slate-400 font-medium">MP3 Full Music Track</p>
+                      </div>
+                    </div>
+                    <div class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-pink-50 dark:bg-pink-950/50 text-pink-600 dark:text-pink-300 flex items-center space-x-1 border border-pink-200/50 dark:border-pink-900/40">
+                      <i data-lucide="disc" id="senorita-disc-icon" class="w-3 h-3 text-pink-500"></i>
+                      <span>Offline MP3</span>
+                    </div>
+                  </div>
+
+                  <!-- Music Display & Album Cover Card -->
+                  <div class="p-4 rounded-xl bg-gradient-to-br from-pastel-rose via-purple-50/30 to-pink-50/50 dark:from-slate-850 dark:to-slate-800 border border-pastel-pinklight/50 dark:border-slate-700/80 flex flex-col items-center justify-center text-center space-y-3 relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 flex items-center justify-center text-white shadow-md relative">
+                      <i data-lucide="music" class="w-8 h-8"></i>
+                      <div id="vinyl-pulse" class="absolute inset-0 rounded-2xl bg-pink-400/30 animate-ping hidden"></div>
+                    </div>
+                    <div>
+                      <h5 class="text-xs font-extrabold text-pastel-slate dark:text-white line-clamp-1">Señorita</h5>
+                      <p class="text-[10px] text-pastel-gray dark:text-slate-400 font-medium mt-0.5">Shawn Mendes, Camila Cabello</p>
+                    </div>
+
+                    <!-- Native HTML5 Audio Tag -->
+                    <audio id="senorita-audio-player" preload="metadata">
+                      <source src="senorita.mp3" fallback-src="Shawn Mendes, Camila Cabello - Señorita.mp3" type="audio/mpeg">
+                      Browser Anda tidak mendukung audio player.
+                    </audio>
+
+                    <!-- Progress Bar & Duration -->
+                    <div class="w-full space-y-1">
+                      <input type="range" id="audio-progress-bar" min="0" max="100" value="0" step="0.1" class="w-full h-1.5 bg-pastel-pinklight/80 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-pastel-pinkdark">
+                      <div class="flex items-center justify-between text-[10px] text-pastel-gray dark:text-slate-400 font-mono">
+                        <span id="audio-current-time">00:00</span>
+                        <span id="audio-duration">03:11</span>
+                      </div>
+                    </div>
+
+                    <!-- Audio Controls -->
+                    <div class="flex items-center justify-center space-x-3 pt-1">
+                      <button onclick="skipAudio(-10)" title="Mundur 10 detik" class="p-2 rounded-full text-pastel-gray dark:text-slate-400 hover:text-pastel-pinkdark dark:hover:text-pink-300 hover:bg-pastel-pinklight/40 transition-all active:scale-90">
+                        <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                      </button>
+                      
+                      <button id="senorita-play-btn" onclick="toggleSenoritaAudio()" class="w-11 h-11 rounded-full bg-pastel-pink hover:bg-pastel-pinkdark text-white flex items-center justify-center shadow-md hover:shadow-lg active:scale-95 transition-all">
+                        <i data-lucide="play" id="senorita-play-icon" class="w-4 h-4 ml-0.5 fill-current"></i>
+                      </button>
+
+                      <button onclick="skipAudio(10)" title="Maju 10 detik" class="p-2 rounded-full text-pastel-gray dark:text-slate-400 hover:text-pastel-pinkdark dark:hover:text-pink-300 hover:bg-pastel-pinklight/40 transition-all active:scale-90">
+                        <i data-lucide="rotate-cw" class="w-4 h-4"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-2 border-t border-pastel-pinklight/20 dark:border-slate-800 flex items-center justify-between text-[10px] text-pastel-gray dark:text-slate-400">
+                  <span class="flex items-center space-x-1 font-medium">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i>
+                    <span>Full Music Señorita diputar di page ini</span>
+                  </span>
+                  <span class="text-[10px] font-mono text-pastel-pinkdark dark:text-pink-400">MP3 Player</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Mini Game Component (Mainkan Langsung Di Halaman) -->
+              <div class="glass-card rounded-2xl p-5 border border-pastel-pinklight/60 dark:border-slate-800 space-y-4 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between border-b border-pastel-pinklight/30 dark:border-slate-800 pb-3">
+                    <div class="flex items-center space-x-2.5">
+                      <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-xs">
+                        <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+                      </div>
+                      <div>
+                        <h4 class="text-xs font-bold text-pastel-slate dark:text-white flex items-center space-x-1.5">
+                          <span>Mini Game Interaktif</span>
+                          <span class="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-300">Play In-Page</span>
+                        </h4>
+                        <p class="text-[10px] text-pastel-gray dark:text-slate-400">Mainkan tanpa perlu berpindah halaman!</p>
+                      </div>
+                    </div>
+                    <!-- Game Switcher Tabs -->
+                    <div class="flex items-center space-x-1 bg-pastel-rose/80 dark:bg-slate-800 p-1 rounded-lg border border-pastel-pinklight/40 dark:border-slate-700">
+                      <button id="tab-game-memory" onclick="switchMiniGame('memory')" class="px-2.5 py-1 text-[10px] font-bold rounded-md transition-all bg-white dark:bg-slate-700 text-pastel-pinkdark dark:text-pink-300 shadow-2xs">
+                        🃏 Memori
+                      </button>
+                      <button id="tab-game-quiz" onclick="switchMiniGame('quiz')" class="px-2.5 py-1 text-[10px] font-bold rounded-md transition-all text-pastel-gray dark:text-slate-400 hover:text-pastel-pinkdark">
+                        🧠 Kuis
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- GAME 1: MEMORY MATCH -->
+                  <div id="game-memory-container" class="mt-4 space-y-3">
+                    <div class="flex items-center justify-between bg-pastel-rose/80 dark:bg-slate-850 p-2.5 rounded-xl border border-pastel-pinklight/40 dark:border-slate-800 text-[11px]">
+                      <div class="flex items-center space-x-3">
+                        <span class="font-bold text-pastel-slate dark:text-white">Langkah: <span id="memory-moves" class="text-pastel-pinkdark dark:text-pink-400 font-extrabold">0</span></span>
+                        <span class="text-pastel-gray dark:text-slate-400">|</span>
+                        <span class="font-bold text-pastel-slate dark:text-white">Pasangan: <span id="memory-matches" class="text-purple-600 dark:text-purple-400 font-extrabold">0/6</span></span>
+                      </div>
+                      <button onclick="initMemoryGame()" class="px-2.5 py-1 text-[10px] font-bold rounded-lg bg-pastel-pink hover:bg-pastel-pinkdark text-white shadow-2xs active:scale-95 transition-all flex items-center space-x-1">
+                        <i data-lucide="rotate-ccw" class="w-3 h-3"></i>
+                        <span>Reset</span>
+                      </button>
+                    </div>
+
+                    <!-- 3x4 Memory Grid -->
+                    <div id="memory-grid" class="grid grid-cols-4 gap-2 min-h-[175px]">
+                      <!-- Generated by JS -->
+                    </div>
+
+                    <!-- Win Notification -->
+                    <div id="memory-win-msg" class="hidden p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-300 dark:border-emerald-800 text-center animate-pulse">
+                      <p class="text-xs font-bold text-emerald-700 dark:text-emerald-300">🎉 Selamat! Semua kartu berhasil dipasangkan!</p>
+                    </div>
+                  </div>
+
+                  <!-- GAME 2: INFORMATIKA QUIZ (Hidden by default) -->
+                  <div id="game-quiz-container" class="hidden mt-4 space-y-3">
+                    <div id="quiz-body" class="p-3 bg-pastel-rose/80 dark:bg-slate-850 rounded-xl border border-pastel-pinklight/40 dark:border-slate-800 space-y-2.5">
+                      <div class="flex items-center justify-between text-[11px]">
+                        <span class="font-bold text-pastel-slate dark:text-white">Soal <span id="quiz-current-num" class="text-purple-600 font-extrabold">1</span>/5</span>
+                        <span class="font-bold text-emerald-600 dark:text-emerald-400">Skor: <span id="quiz-score">0</span></span>
+                      </div>
+                      <p id="quiz-question-text" class="text-xs font-bold text-pastel-slate dark:text-white leading-snug">
+                        Memuat pertanyaan...
+                      </p>
+                      <div id="quiz-options" class="grid grid-cols-1 gap-1.5">
+                        <!-- Generated by JS -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-2 border-t border-pastel-pinklight/20 dark:border-slate-800 flex items-center justify-between text-[10px] text-pastel-gray dark:text-slate-400">
+                  <span class="flex items-center space-x-1">
+                    <i data-lucide="sparkles" class="w-3 h-3 text-purple-500"></i>
+                    <span>Mini game 100% playable in-page</span>
+                  </span>
+                  <span class="font-bold text-pastel-pinkdark dark:text-pink-400">Grace Arcade</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION: INFORMATIKA ==================== -->
+    <section id="section-informatika" class="section-transition opacity-0 hidden space-y-6">
+
+      <!-- Header Pelajaran Informatika -->
+      <div
+        class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-pastel-pinklight/30 dark:border-slate-800 pb-4">
+        <div>
+          <h2
+            class="text-2xl md:text-3xl font-serif font-black text-pastel-slate dark:text-white flex items-center space-x-2">
+            <span class="p-2 bg-pastel-blue dark:bg-blue-950/60 text-pastel-bluedark dark:text-blue-300 rounded-xl"><i
+                data-lucide="binary" class="w-6 h-6"></i></span>
+            <span>Posting Informatika</span>
+          </h2>
+          <p class="text-xs md:text-sm text-pastel-gray dark:text-slate-400 mt-1">
+            Mengarsipkan materi Informatika: Informasi, Topologi Jaringan, dan Sistem Digital.
+          </p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="flex items-center space-x-2 w-full md:w-auto">
+          <div class="relative flex-grow md:w-64">
+            <input type="text" id="search-info" oninput="filterPosts('informatika')" placeholder="Cari materi Informatika..."
+              class="w-full pl-10 pr-4 py-2 rounded-xl text-sm border border-pastel-pinklight dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+            <div class="absolute left-3.5 top-2.5 text-pastel-gray dark:text-slate-400">
+              <i data-lucide="search" class="w-4 h-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid Cards Tugas Informatika -->
+      <div id="info-posts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Dimuat via JS -->
+      </div>
+
+      <!-- Pesan jika tidak ada tugas -->
+      <div id="info-empty-msg"
+        class="hidden text-center py-12 bg-white/40 dark:bg-slate-900/40 rounded-3xl border border-pastel-pinklight/20 dark:border-slate-800">
+        <i data-lucide="folder-open" class="w-12 h-12 mx-auto text-pastel-pinklight dark:text-slate-700 mb-3"></i>
+        <h3 class="text-base font-semibold text-pastel-slate dark:text-white">Tidak Ada Posting Ditemukan</h3>
+        <p class="text-xs text-pastel-gray dark:text-slate-400 mt-1">Belum ada postingan materi Informatika yang sesuai pencarian.</p>
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION: BAHASA INDONESIA ==================== -->
+    <section id="section-bahasa_indonesia" class="section-transition opacity-0 hidden space-y-6">
+
+      <!-- Header Pelajaran Bahasa Indonesia -->
+      <div
+        class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-pastel-pinklight/30 dark:border-slate-800 pb-4">
+        <div>
+          <h2
+            class="text-2xl md:text-3xl font-serif font-black text-pastel-slate dark:text-white flex items-center space-x-2">
+            <span
+              class="p-2 bg-pastel-purple dark:bg-purple-950/60 text-pastel-purpledark dark:text-purple-300 rounded-xl"><i
+                data-lucide="book-open" class="w-6 h-6"></i></span>
+            <span>Posting Bahasa Indonesia</span>
+          </h2>
+          <p class="text-xs md:text-sm text-pastel-gray dark:text-slate-400 mt-1">
+            Mengarsipkan materi Bahasa Indonesia: Teks Anekdot, Teks Deskripsi, Teks Prosedur, dan Teks Negosiasi.
+          </p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="flex items-center space-x-2 w-full md:w-auto">
+          <div class="relative flex-grow md:w-64">
+            <input type="text" id="search-indo" oninput="filterPosts('bahasa_indonesia')" placeholder="Cari materi B. Indonesia..."
+              class="w-full pl-10 pr-4 py-2 rounded-xl text-sm border border-pastel-pinklight dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+            <div class="absolute left-3.5 top-2.5 text-pastel-gray dark:text-slate-400">
+              <i data-lucide="search" class="w-4 h-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid Cards Tugas Bahasa Indonesia -->
+      <div id="indo-posts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Dimuat via JS -->
+      </div>
+
+      <!-- Pesan jika tidak ada tugas -->
+      <div id="indo-empty-msg"
+        class="hidden text-center py-12 bg-white/40 dark:bg-slate-900/40 rounded-3xl border border-pastel-pinklight/20 dark:border-slate-800">
+        <i data-lucide="folder-open" class="w-12 h-12 mx-auto text-pastel-pinklight dark:text-slate-700 mb-3"></i>
+        <h3 class="text-base font-semibold text-pastel-slate dark:text-white">Tidak Ada Posting Ditemukan</h3>
+        <p class="text-xs text-pastel-gray dark:text-slate-400 mt-1">Belum ada postingan materi Bahasa Indonesia yang sesuai pencarian.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer
+    class="w-full glass-nav border-t border-pastel-pinklight/40 dark:border-slate-800 py-6 mt-12 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-center sm:text-left">
+        <p class="text-xs font-bold text-pastel-slate dark:text-slate-300">
+          © 2026 <span id="footer-author-name">Grace Caroline</span>. All Rights Reserved.
+        </p>
+        <p class="text-[10px] text-pastel-gray dark:text-slate-400 mt-0.5">
+          Portfolio & Kumpulan Tugas Sekolah Kelas 11.3
+        </p>
+      </div>
+
+      <!-- Sosial Media Icons di Footer -->
+      <div class="flex items-center space-x-3" id="footer-social-container">
+        <!-- Diisi secara dinamis -->
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS & DIALOGS ==================== -->
+
+  <!-- 1. MODAL POSTING TUGAS BARU / EDIT TUGAS -->
+  <div id="modal-add-post" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity" onclick="closeAddPostModal()"></div>
+    <div
+      class="relative glass-card bg-white dark:bg-slate-900 rounded-3xl w-full max-w-2xl p-6 md:p-8 shadow-xl border border-pastel-pinklight dark:border-slate-800 space-y-6 z-10 my-8">
+      <div class="flex items-center justify-between border-b border-pastel-pinklight/30 dark:border-slate-800 pb-4">
+        <h3 class="text-xl font-serif font-black text-pastel-slate dark:text-white flex items-center space-x-2">
+          <i data-lucide="pen-tool" class="w-5 h-5 text-pastel-pinkdark dark:text-pink-400"></i>
+          <span id="post-modal-title">Tulis Posting Tugas Baru</span>
+        </h3>
+        <button onclick="closeAddPostModal()" class="text-pastel-gray hover:text-pastel-pinkdark dark:text-slate-400 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="form-add-post" onsubmit="handleSavePost(event)" class="space-y-4">
+        <input type="hidden" id="post-edit-id" value="">
+
+        <div>
+          <label class="block text-xs font-bold text-pastel-gray dark:text-slate-400 uppercase tracking-wider mb-1.5"
+            for="post-title">Judul Posting / Tugas</label>
+          <input type="text" id="post-title" required placeholder="Contoh: Pengertian & Kaidah Kebahasaan Teks Anekdot"
+            class="w-full px-4 py-2.5 rounded-xl border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-pastel-gray dark:text-slate-400 uppercase tracking-wider mb-1.5"
+              for="post-category">Mata Pelajaran</label>
+            <select id="post-category" required
+              class="w-full px-4 py-2.5 rounded-xl border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+              <option value="informatika">Informatika</option>
+              <option value="bahasa_indonesia">Bahasa Indonesia</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-pastel-gray dark:text-slate-400 uppercase tracking-wider mb-1.5"
+              for="post-date">Tanggal Posting</label>
+            <input type="date" id="post-date" required
+              class="w-full px-4 py-2.5 rounded-xl border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-pastel-gray dark:text-slate-400 uppercase tracking-wider mb-1.5"
+              for="post-status">Status / Label (Opsional)</label>
+            <input type="text" id="post-status" placeholder="Contoh: Materi Informasi, Nilai: 95, atau Selesai"
+              class="w-full px-4 py-2.5 rounded-xl border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-pastel-gray dark:text-slate-400 uppercase tracking-wider mb-1.5"
+              for="post-link">Tautan Lampiran / Google Drive (Opsional)</label>
+            <input type="url" id="post-link" placeholder="https://drive.google.com/..."
+              class="w-full px-4 py-2.5 rounded-xl border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-pastel-gray dark:text-slate-400 uppercase tracking-wider mb-1.5"
+            for="post-summary">Ringkasan Singkat (1-2 kalimat)</label>
+          <input type="text" id="post-summary" required placeholder="Gambaran umum materi..."
+            class="w-full px-4 py-2.5 rounded-xl border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-pastel-gray dark:text-slate-400 uppercase tracking-wider mb-1.5"
+            for="post-content">Isi Materi / Penjelasan Lengkap (Format Markdown / Teks)</label>
+          <textarea id="post-content" required rows="6" placeholder="Gunakan # untuk judul, ## untuk subjudul, - untuk poin-poin..."
+            class="w-full px-4 py-2.5 rounded-xl border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white font-sans leading-relaxed"></textarea>
+        </div>
+
+        <div class="flex justify-end space-x-3 pt-4 border-t border-pastel-pinklight/30 dark:border-slate-800">
+          <button type="button" onclick="closeAddPostModal()"
+            class="px-5 py-2.5 border border-pastel-pinklight dark:border-slate-700 text-pastel-gray dark:text-slate-300 hover:bg-pastel-rose dark:hover:bg-slate-850 rounded-xl font-bold transition-all">Batal</button>
+          <button type="submit"
+            class="px-5 py-2.5 bg-pastel-pink hover:bg-pastel-pinkdark text-white rounded-xl font-bold shadow-xs transition-all flex items-center space-x-2">
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span id="post-save-btn-text">Simpan Posting</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. MODAL VIEW DETAIL MATERI / TUGAS -->
+  <div id="modal-view-post" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs transition-opacity" onclick="closeViewPostModal()"></div>
+    <div
+      class="relative glass-card bg-white dark:bg-slate-900 rounded-3xl w-full max-w-3xl p-6 md:p-10 shadow-2xl border border-pastel-pinklight dark:border-slate-800 space-y-6 z-10 my-8 max-h-[90vh] overflow-y-auto">
+      
+      <!-- Header View Modal -->
+      <div class="flex items-start justify-between border-b border-pastel-pinklight/40 dark:border-slate-800 pb-4">
+        <div class="space-y-2">
+          <div class="flex items-center space-x-2">
+            <span id="detail-category-badge" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"></span>
+            <span id="detail-status-badge" class="px-3 py-1 rounded-full text-xs font-bold bg-pastel-rose dark:bg-pink-950/60 text-pastel-pinkdark dark:text-pink-300 border border-pastel-pinklight/40"></span>
+          </div>
+          <h2 id="detail-title" class="text-2xl md:text-3xl font-serif font-black text-pastel-slate dark:text-white leading-tight"></h2>
+          <div class="flex items-center space-x-4 text-xs text-pastel-gray dark:text-slate-400">
+            <span class="flex items-center space-x-1">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+              <span id="detail-date"></span>
+            </span>
+            <span class="flex items-center space-x-1">
+              <i data-lucide="user" class="w-3.5 h-3.5"></i>
+              <span>Oleh Grace Caroline</span>
+            </span>
+          </div>
+        </div>
+
+        <button onclick="closeViewPostModal()" class="text-pastel-gray hover:text-pastel-pinkdark dark:text-slate-400 p-1.5 rounded-xl hover:bg-pastel-rose dark:hover:bg-slate-800 transition-all">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Isi Artikel / Detail Materi dengan Rich Formatting -->
+      <div id="detail-content" class="space-y-4 text-pastel-slate dark:text-slate-200 text-sm md:text-base leading-relaxed">
+        <!-- Diisi oleh Javascript parser -->
+      </div>
+
+      <!-- Box Lampiran / Link Google Drive -->
+      <div id="detail-attachment-box" class="hidden p-4 rounded-2xl bg-pastel-rose/80 dark:bg-slate-850/80 border border-pastel-pinklight/50 dark:border-slate-750 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="p-2 rounded-xl bg-white dark:bg-slate-800 text-pastel-pinkdark dark:text-pink-300">
+            <i data-lucide="link-2" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-pastel-slate dark:text-white">Lampiran Berkas / Dokumen</h4>
+            <p class="text-[10px] text-pastel-gray dark:text-slate-400">Klik tautan di samping untuk membuka dokumen asli.</p>
+          </div>
+        </div>
+        <a id="detail-attachment-link" href="#" target="_blank" class="px-4 py-2 bg-pastel-pink hover:bg-pastel-pinkdark text-white rounded-xl text-xs font-bold transition-all shadow-2xs flex items-center space-x-1.5">
+          <span>Buka Link</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- Author Footer Card di Modal -->
+      <div class="pt-4 border-t border-pastel-pinklight/30 dark:border-slate-800 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <img id="detail-author-avatar" src="avatar.png" class="w-10 h-10 rounded-full object-cover border-2 border-pastel-pinklight dark:border-slate-700" onerror="this.src='https://api.dicebear.com/7.x/adventurer/svg?seed=Grace&backgroundColor=ffb8c6'">
+          <div>
+            <h4 class="text-xs font-bold text-pastel-slate dark:text-white" id="detail-author-name">Grace Caroline</h4>
+            <p class="text-[10px] text-pastel-gray dark:text-slate-400">SMA Cinta Kasih Tzu Chi • Kelas 11.3</p>
+          </div>
+        </div>
+        <button onclick="closeViewPostModal()" class="px-5 py-2 rounded-xl bg-pastel-rose dark:bg-slate-800 text-pastel-pinkdark dark:text-pink-300 font-bold text-xs hover:bg-pastel-pinklight dark:hover:bg-slate-700 transition-all">
+          Tutup Artikel
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. MODAL EDIT PROFIL & UPLOAD FOTO PROFIL (REQUIRED REQUIREMENT) -->
+  <div id="modal-edit-profile" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity" onclick="closeEditProfileModal()"></div>
+    <div
+      class="relative glass-card bg-white dark:bg-slate-900 rounded-3xl w-full max-w-2xl p-6 md:p-8 shadow-xl border border-pastel-pinklight dark:border-slate-800 space-y-6 z-10 my-8">
+      <div class="flex items-center justify-between border-b border-pastel-pinklight/30 dark:border-slate-800 pb-4">
+        <h3 class="text-xl font-serif font-black text-pastel-slate dark:text-white flex items-center space-x-2">
+          <i data-lucide="user-cog" class="w-5 h-5 text-pastel-pinkdark dark:text-pink-400"></i>
+          <span>Setting Profil & Upload Foto</span>
+        </h3>
+        <button onclick="closeEditProfileModal()" class="text-pastel-gray hover:text-pastel-pinkdark dark:text-slate-400 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="form-edit-profile" onsubmit="handleSaveProfile(event)" class="space-y-4">
+        
+        <!-- Upload Foto Profil Section -->
+        <div class="p-4 rounded-2xl bg-pastel-rose/70 dark:bg-slate-850/70 border border-pastel-pinklight/40 dark:border-slate-800 space-y-3">
+          <label class="block text-xs font-bold text-pastel-pinkdark dark:text-pink-400 uppercase tracking-wider flex items-center space-x-1.5">
+            <i data-lucide="camera" class="w-4 h-4"></i>
+            <span>Upload Foto Profil Anda</span>
+          </label>
+          
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <!-- Thumbnail Preview -->
+            <div class="w-20 h-20 rounded-full border-4 border-white dark:border-slate-800 shadow-md overflow-hidden bg-slate-100 dark:bg-slate-800 shrink-0">
+              <img id="edit-avatar-preview" src="avatar.png" class="w-full h-full object-cover" onerror="this.src='https://api.dicebear.com/7.x/adventurer/svg?seed=Grace&backgroundColor=ffb8c6'">
+            </div>
+
+            <!-- Inputs & File Picker Button -->
+            <div class="flex-grow space-y-2 w-full">
+              <div class="flex flex-col sm:flex-row gap-2">
+                <input type="file" id="edit-avatar-file" accept="image/*" class="hidden" onchange="previewProfileImage(event)">
+                <label for="edit-avatar-file" class="cursor-pointer px-4 py-2.5 rounded-xl bg-pastel-pink hover:bg-pastel-pinkdark text-white font-bold text-xs flex items-center justify-center space-x-2 transition-all shadow-2xs">
+                  <i data-lucide="upload-cloud" class="w-4 h-4"></i>
+                  <span>Pilih File Foto dari Komputer</span>
+                </label>
+                <button type="button" onclick="resetProfileImageToDefault()" class="px-4 py-2.5 rounded-xl border border-red-200 dark:border-red-950/40 text-red-500 hover:bg-red-50 dark:hover:bg-red-950/20 text-xs font-bold transition-all flex items-center justify-center space-x-1">
+                  <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                  <span>Reset Foto</span>
+                </button>
+              </div>
+              <p class="text-[10px] text-pastel-gray dark:text-slate-400">Pilih gambar JPG/PNG. Foto akan diunggah dan disimpan secara permanen di memori browser Anda.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informasi Umum -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-pastel-gray dark:text-slate-400 uppercase tracking-wider mb-1.5"
+              for="edit-name">Nama Lengkap</label>
+            <input type="text" id="edit-name" required
+              class="w-full px-4 py-2.5 rounded-xl border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-pastel-gray dark:text-slate-400 uppercase tracking-wider mb-1.5"
+              for="edit-role">Peran / Status</label>
+            <input type="text" id="edit-role" required
+              class="w-full px-4 py-2.5 rounded-xl border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-pastel-gray dark:text-slate-400 uppercase tracking-wider mb-1.5"
+            for="edit-bio">Deskripsi Singkat (Bio)</label>
+          <textarea id="edit-bio" required rows="3"
+            class="w-full px-4 py-2.5 rounded-xl border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white font-sans leading-relaxed"></textarea>
+        </div>
+
+        <!-- Sosial Media Links (Sesuai dengan Link User) -->
+        <h4
+          class="text-xs font-bold text-pastel-pinkdark dark:text-pink-400 uppercase tracking-wider border-b border-pastel-pinklight/20 dark:border-slate-800 pb-1 pt-2">
+          Tautan Sosial Media Saya</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div>
+            <label class="block text-[11px] text-pastel-gray dark:text-slate-400 mb-1" for="edit-instagram">Instagram URL</label>
+            <input type="url" id="edit-instagram" placeholder="https://www.instagram.com/..."
+              class="w-full px-3 py-2 rounded-xl text-xs border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+          </div>
+          <div>
+            <label class="block text-[11px] text-pastel-gray dark:text-slate-400 mb-1" for="edit-tiktok">TikTok URL</label>
+            <input type="url" id="edit-tiktok" placeholder="https://www.tiktok.com/..."
+              class="w-full px-3 py-2 rounded-xl text-xs border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+          </div>
+          <div>
+            <label class="block text-[11px] text-pastel-gray dark:text-slate-400 mb-1" for="edit-whatsapp">WhatsApp URL</label>
+            <input type="text" id="edit-whatsapp" placeholder="https://wa.me/6281388434796"
+              class="w-full px-3 py-2 rounded-xl text-xs border border-pastel-pinklight dark:border-slate-700 bg-white dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-pastel-pink dark:text-white">
+          </div>
+        </div>
+
+        <!-- Tingkat Keahlian Slider -->
+        <h4
+          class="text-xs font-bold text-pastel-pinkdark dark:text-pink-400 uppercase tracking-wider border-b border-pastel-pinklight/20 dark:border-slate-800 pb-1 pt-2">
+          Tingkat Keahlian (%)</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs">
+              <span class="font-semibold text-pastel-slate dark:text-slate-350">Informatika & Coding</span>
+              <span id="val-coding" class="font-bold text-pastel-pinkdark dark:text-pink-400">85%</span>
+            </div>
+            <input type="range" id="edit-skill-coding" min="10" max="100"
+              class="w-full accent-pastel-pink cursor-pointer"
+              oninput="document.getElementById('val-coding').innerText = this.value + '%'">
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs">
+              <span class="font-semibold text-pastel-slate dark:text-slate-350">Desain Grafis / UI/UX</span>
+              <span id="val-design" class="font-bold text-pastel-pinkdark dark:text-pink-400">90%</span>
+            </div>
+            <input type="range" id="edit-skill-design" min="10" max="100"
+              class="w-full accent-pastel-pink cursor-pointer"
+              oninput="document.getElementById('val-design').innerText = this.value + '%'">
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs">
+              <span class="font-semibold text-pastel-slate dark:text-slate-350">Bahasa Indonesia & Esai</span>
+              <span id="val-writing" class="font-bold text-pastel-pinkdark dark:text-pink-400">80%</span>
+            </div>
+            <input type="range" id="edit-skill-writing" min="10" max="100"
+              class="w-full accent-pastel-pink cursor-pointer"
+              oninput="document.getElementById('val-writing').innerText = this.value + '%'">
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs">
+              <span class="font-semibold text-pastel-slate dark:text-slate-350">Presentasi / Public Speaking</span>
+              <span id="val-pres" class="font-bold text-pastel-pinkdark dark:text-pink-400">75%</span>
+            </div>
+            <input type="range" id="edit-skill-pres" min="10" max="100" class="w-full accent-pastel-pink cursor-pointer"
+              oninput="document.getElementById('val-pres').innerText = this.value + '%'">
+          </div>
+        </div>
+
+        <!-- Tombol Aksi -->
+        <div class="flex justify-end space-x-3 pt-4 border-t border-pastel-pinklight/30 dark:border-slate-800">
+          <button type="button" onclick="closeEditProfileModal()"
+            class="px-5 py-2.5 border border-pastel-pinklight dark:border-slate-700 text-pastel-gray dark:text-slate-300 hover:bg-pastel-rose dark:hover:bg-slate-850 rounded-xl font-bold transition-all">Batal</button>
+          <button type="submit"
+            class="px-5 py-2.5 bg-pastel-pink hover:bg-pastel-pinkdark text-white rounded-xl font-bold shadow-xs transition-all flex items-center space-x-2">
+            <i data-lucide="save" class="w-4 h-4"></i>
+            <span>Simpan Profil</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ==================== LOGIKA JAVASCRIPT LENGKAP ==================== -->
+  <script>
+    // ==================== SAFE STORAGE HELPERS (FOR PRIVACY MODE / HOSTING COMPATIBILITY) ====================
+    function safeLocalStorageGet(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (e) {
+        console.warn("localStorage akses dibatasi/disabled:", e);
+        return null;
+      }
+    }
+
+    function safeLocalStorageSet(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (e) {
+        console.warn("localStorage simpan gagal:", e);
+      }
+    }
+
+    // ==================== GLOBAL CONSTANTS & DATA DEFAULT ====================
+    const defaultPosts = [
+      // INFORMATIKA POST 1: INFORMASI
+      {
+        id: "1",
+        title: "Materi Informatika: Dasar Informatika & Konsep Informasi",
+        summary: "Pembahasan komprehensif mengenai Dasar Informatika, definisi data vs informasi, transformasi kode biner, serta dampak pengaruh Informatika dalam medis, pendidikan, bisnis, dan kehidupan sehari-hari.",
+        content: `# Dasar Informatika
+
+Dasar Informatika (Fundamentals of Informatics) adalah fondasi ilmu yang mempelajari tentang representasi, pemrosesan, dan komunikasi informasi menggunakan sistem komputasi. Inti dari bidang ini bukan hanya sekadar belajar menggunakan perangkat lunak, tetapi memahami prinsip-prinsip di balik bagaimana informasi dikumpulkan, diolah, disimpan, dan disebarluaskan secara digital. Ruang lingkupnya sangat luas, mencakup studi tentang algoritma (langkah-langkah logis untuk memecahkan masalah), struktur data (cara mengorganisir informasi agar efisien), arsitektur komputer (cara kerja perangkat keras), pemrograman, jaringan komputer, serta basis data. Dengan kata lain, Dasar Informatika memberikan peta konseptual untuk memahami dunia komputasi secara menyeluruh, dari level bit dan logika Boolean hingga level sistem yang kompleks.
+
+![Dasar Informatika](images/image1.png)
+
+Beberapa komponen inti dalam Dasar Informatika yang saling berkaitan antara lain: **Algoritma dan Pemrograman**, yang merupakan jantung dari informatika di mana kita merancang solusi sistematis untuk suatu masalah dan mengimplementasikannya ke dalam kode yang dapat dieksekusi komputer, **Struktur Data**, yang menentukan bagaimana informasi disimpan dan diakses, seperti array, linked list, atau tree, yang secara langsung mempengaruhi efisiensi suatu program, **Sistem Komputer**, termasuk sistem operasi yang mengelola sumber daya perangkat keras dan perangkat lunak, dan **Jaringan dan Komunikasi Data**, yang mempelajari protokol dan teknologi untuk menghubungkan komputer dan mentransfer data, seperti TCP/IP dan internet. Penerapan praktisnya langsung kita rasakan dalam pembuatan aplikasi, pengelolaan website, analisis data, hingga pengembangan kecerdasan buatan.
+
+Memahami Dasar Informatika telah menjadi sebuah kebutuhan mendasar di abad ke-21, bukan hanya bagi calon programmer atau insinyur, tetapi bagi hampir semua profesi. Ilmu ini melatih *computational thinking*—sebuah cara berpikir yang terstruktur, logis, dan analitis dalam memecahkan masalah—yang dapat diterapkan dalam berbagai bidang kehidupan. Di era digital yang dipenuhi oleh big data, cloud computing, dan Internet of Things (IoT), individu yang menguasai dasar-dasar informatika akan memiliki kemampuan untuk tidak hanya menjadi pengguna teknologi yang pasif, tetapi juga menjadi pencipta, inovator, dan pengambil keputusan yang kritis dalam menghadapi tantangan digital. Dengan demikian, Dasar Informatika berperan sebagai literasi baru yang memberdayakan seseorang untuk memahami, beradaptasi, dan berkontribusi secara aktif dalam masyarakat modern.
+
+# Apa Itu Informasi
+
+Dalam informatika, informasi adalah data yang telah dipproses, diorganisir, dan diinterpretasikan sehingga memiliki makna dan nilai bagi penerimanya. Untuk memahaminya, kita harus membedakannya dari "data". Data adalah fakta mentah, simbol, atau pengamatan yang belum dipproses, seperti angka, huruf, atau kode biner (contoh: "30", "C", "01000011"). Ketika data ini diolah, diberi konteks, dan struktur, barulah ia menjadi informasi. Misalnya, data "30" dan "C" dapat diolah menjadi informasi "Suhu ruangan saat ini adalah 30 derajat Celsius". Proses transformasi dari data menjadi inilah yang menjadi inti dari bidang informatika, dimana komputer bertindak sebagai alat pengolah.
+
+![Transformasi Data Menjadi Informasi](images/image2.png)
+
+Secara teknis, semua informasi dalam sistem komputer pada akhirnya direpresentasikan dalam bentuk kode biner (bit), yaitu rangkaian 0 dan 1. Representasi ini memungkinkan informasi—mulai dari teks, gambar, suara, hingga video—untuk disimpan, dipproses, dan dikomunikasikan oleh perangkat digital. Sebuah program atau algoritma kemudian memproses data biner ini berdasarkan aturan (sintaks) tertentu untuk menghasilkan informasi yang bermakna bagi pengguna. Contohnya, sebuah software spreadsheet mengambil data angka mentah, memprosesnya dengan rumus penjumlahan, dan menghasilkan informasi berupa "Total Pendapatan Kuartal Ini". Nilai informasi sangat ditentukan oleh keakuratannya, ketepatan waktunya (timeliness), relevansinya, dan kemudahannya untuk diakses.
+
+Tujuan akhir dari memproses data menjadi informasi adalah untuk mendukung pengambilan keputusan, pemecahan masalah, dan peningkatan pengetahuan. Informasi mengurangi ketidakpastian; dengan mengetahui "Stok barang X tersisa 5 unit", manajer gudang dapat mengambil keputusan untuk melakukan pemesanan ulang. Dalam konteks yang lebih luas, informasi adalah aset strategis. Kemampuan untuk mengelola informasi (melalui basis data, jaringan, dan sistem informasi) adalah yang mendorong efisiensi bisnis, inovasi ilmiah, dan interaksi sosial modern. Dengan demikian, informasi bukanlah sekadar output dari pemrosesan data, melainkan elemen vital yang memberikan makna, arah, dan kekuatan dalam dunia digital.
+
+# Pengaruh Informatika
+
+Di bidang kedokteran, informatika telah membawa revolusi dalam cara dokter mendiagnosis dan merawat pasien. Kini, dengan teknologi seperti Rekam Medis Elektronik (EMR), data kesehatan pasien tersimpan rapi dan dapat diakses oleh dokter di mana saja, mempercepat proses konsultasi. Selain itu, pencitraan medis seperti CT-Scan dan MRI menggunakan perangkat lunak canggih untuk menghasilkan gambar organ dalam tubuh yang sangat detail, membantu dokter mendeteksi penyakit seperti tumor atau patah tulang dengan lebih akurat. Bahkan, operasi pun bisa dibantu oleh robot yang dikendalikan oleh dokter, sehingga lebih presisi dan minim luka.
+
+![Informatika di Bidang Kedokteran & Kesehatan](images/image3.png)
+
+Informatika telah mengubah dunia pendidikan menjadi lebih mudah diakses dan menarik. Dengan adanya pembelajaran online dan e-learning, siswa bisa belajar dari rumah kapan saja melalui video, kuis interaktif, dan forum diskusi. Guru juga dapat menggunakan berbagai aplikasi dan software untuk membuat materi pelajaran yang tidak lagi membosankan, misalnya dengan simulasi 3D untuk pelajaran biologi atau sejarah. Informasi yang dulunya hanya ada di perpustakaan, sekarang bisa dicari dalam hitungan detik lewat internet, sehingga proses belajar menjadi lebih fleksibel dan menyenangkan.
+
+![Informatika di Bidang Pendidikan & E-Learning](images/image4.png)
+
+Dalam dunia bisnis, informatika berperan sebagai mesin penggerak efisiensi dan perluasan pasar. Sistem kasir digital dan inventori otomatis memudahkan pemilik toko mengelola stok barang dan transaksi dengan cepat. Yang paling terasa adalah kemunculan e-commerce dan media sosial, yang memungkinkan sebuah usaha kecil menjual produknya tidak hanya di sekitar rumah, tetapi ke seluruh Indonesia bahkan dunia. Iklan pun bisa ditargetkan secara spesifik kepada calon pelanggan yang paling tepat, sehingga bisnis bisa berkembang dengan biaya yang lebih efektif.
+
+![Informatika di Bidang Bisnis & E-Commerce](images/image5.png)
+
+# Infromatika Dalam Kehidupan Sehari - hari
+
+Informatika telah menyatu dalam keseharian kita, membuat hidup menjadi jauh lebih praktis dan terhubung. Bayangkan, untuk berkomunikasi dengan keluarga yang jauh, kita tidak perlu lagi menunggu surat berhari-hari; dengan aplikasi pesan instan dan video call seperti WhatsApp atau Zoom, kita bisa terhubung secara langsung dan real-time hanya dalam hitungan detik. Saat kita ingin pergi, aplikasi navigasi seperti Google Maps membantu menunjukkan jalan dan memperkirakan waktu tempuh, sementara layanan transportasi online seperti Gojek memudahkan kita memesan makanan atau tumpangan tanpa perlu keluar rumah. Bahkan untuk urusan hiburan, kita bisa menonton film favorit kapan saja melalui layanan streaming seperti Netflix, atau mendengarkan jutaan lagu di Spotify. Intinya, informatika seperti "otak" di balik semua smartphone dan gadget yang kita gunakan, yang dengan cerdas menyederhanakan tugas-tugas rutin, menghemat waktu, dan menghubungkan kita dengan dunia.`,
+        category: "informatika",
+        date: "2026-07-28",
+        status: "Materi Informasi",
+        link: ""
+      },
+
+      // INFORMATIKA POST 2: TOPOLOGI
+      {
+        id: "2",
+        title: "Materi Informatika: Topologi Jaringan Komputer",
+        summary: "Penjelasan lengkap mengenai pengertian topologi jaringan serta gambaran, keunggulan, dan kelemahan 6 jenis topologi (Ring, Bus, Star, Extended Star, Tree, Mesh) lengkap dengan diagram.",
+        content: `# Pengertian Topologi
+
+Dalam dunia informatika dan jaringan komputer, **Topologi** adalah cara atau konsep untuk menghubungkan dua atau lebih perangkat komputer (seperti komputer, printer, server) menjadi satu jaringan yang saling terhubung. Topologi mendefinisikan bagaimana perangkat-perangkat tersebut diatur dan berkomunikasi satu sama lain, baik secara fisik (tata letak kabel) maupun secara logika (aliran data).
+
+![Pengertian & Konsep Topologi Jaringan](images/image6.png)
+
+![Konektivitas dan Arsitektur Jaringan](images/image7.png)
+
+## Jenis - jenis Topologi
+1. Topologi Cincin ( Ring )
+2. Topologi Bus
+3. Topologi Bintang ( Star )
+4. Topologi Extended Star
+5. Topologi Pohon ( Tree )
+6. Topologi Mesh
+
+# Gambaran Dan Penjelasan
+
+## Topologi Cincin ( Ring )
+
+Dalam topologi ini, setiap perangkat terhubung ke dua perangkat lainnya, membentuk sebuah cincin. Data berpindah dari satu perangkat ke perangkat berikutnya dalam satu arah (menggunakan "token" untuk mengontrol transmisi) hingga mencapai tujuannya.
+
+![Diagram Topologi Cincin (Ring)](images/image8.png)
+
+### Keunggulan Topologi Cincin ( Ring ) :
+- **Terorganisir** : Aliran data sangat teratur dan terprediksi.
+- **Kinerja Stabil** : Tidak ada tabrakan data (collision) karena sistem token passing.
+- **Biaya Relatif Murah** : Untuk jaringan kecil, lebih efisien daripada topologi star.
+
+### Kelemahan Topologi Cincin ( Ring ) :
+- **Titik Kegagalan Tunggal** : Jika satu koneksi atau perangkat rusak, seluruh jaringan dapat terputus.
+- **Skalabilitas Buruk** : Menambah atau mengurangi perangkat mengganggu seluruh operasi jaringan.
+- **Troubleshooting Sulit** : Mencari kerusakan memerlukan pengecekan berurutan pada setiap node.
+
+## Topologi Bus
+
+Topologi bus menggunakan satu kabel koaksial panjang (backbone) sebagai media transmisi utama. Semua perangkat terhubung langsung ke kabel ini. Sinyal data yang dikirim akan disalurkan melalui backbone dan dapat "didengar" oleh semua perangkat.
+
+![Diagram Topologi Bus](images/image9.png)
+
+### Keunggulan Topologi Bus :
+- **Ekonomis** : Hemat kabel dan biaya instalasi.
+- **Sederhana** : Mudah dipasang untuk jaringan sangat kecil.
+- **Minimal Kabel** : Tidak memerlukan perangkat jaringan tambahan seperti switch.
+
+### Kelemahan Topologi Bus :
+- **Rentan Gangguan** : Jika backbone putus, seluruh jaringan lumpuh.
+- **Konflik Data** : Tabrakan data (collision) sering terjadi ketika banyak perangkat mengirim bersamaan.
+- **Performa Menurun** : Kinerja jaringan menurun drastis seiring penambahan perangkat.
+- **Diagnosa Sulit** : Isolasi masalah membutuhkan pengecekan titik per titik.
+
+## Topologi Bintang ( Star )
+
+Ini adalah topologi paling umum di LAN modern. Semua perangkat terhubung ke perangkat pusat seperti switch atau hub. Semua komunikasi harus melalui perangkat pusat ini yang bertindak sebagai pengatur lalu lintas data.
+
+![Diagram Topologi Bintang (Star)](images/image10.png)
+
+### Keunggulan Topologi Bintang ( Star ) :
+- **Tahan Gangguan** : Kerusakan satu kabel hanya mempengaruhi satu perangkat.
+- **Mudah Dikelola** : Penambahan, penghapusan, dan pemecahan masalah sangat mudah.
+- **Kinerja Baik** : Dedicated connection ke switch meminimalkan collision.
+- **Fleksibel** : Mudah dikembangkan dan diubah.
+
+### Kelemahan Topologi Bintang ( Star ) :
+- **Ketergantungan Pusat** : Jika switch/hub rusak, seluruh jaringan down.
+- **Biaya Lebih Tinggi** : Membutuhkan lebih banyak kabel dan perangkat pusat.
+- **Bottleneck** : Perangkat pusat dapat menjadi titik kemacetan jika kapasitasnya terlampaui.
+
+## Topologi Extended Star
+
+Pengembangan dari topologi star dimana beberapa switch dari jaringan star yang lebih kecil terhubung ke switch pusat yang lebih besar, membentuk struktur hierarkis.
+
+![Diagram Topologi Extended Star](images/image11.png)
+
+### Keunggulan Topologi Extended Star :
+- **Sangat Skalabel** : Mudah dikembangkan dengan menambah switch baru.
+- **Manajemen Terstruktur** : Troubleshooting dapat dilokalisir per segmen.
+- **Kinerja Teroptimasi** : Lalu lintas lokal tidak membebani jaringan inti.
+- **Reliabilitas Tinggi** : Gangguan di satu segmen tidak mempengaruhi segmen lain.
+
+### Kelemahan Topologi Extended Star :
+- **Biaya Sangat Tinggi** : Membutuhkan banyak perangkat jaringan dan kabel.
+- **Kompleksitas Tinggi** : Perencanaan dan pemeliharaan membutuhkan keahlian.
+- **Titik Kegagalan Kritis** : Switch pusat adalah single point of failure untuk konektivitas antar segmen.
+
+## Topologi Pohon ( Tree )
+
+Gabungan antara topologi star dan bus, dimana beberapa kelompok star dihubungkan oleh backbone linear, membentuk struktur hierarkis seperti pohon.
+
+![Diagram Topologi Pohon (Tree)](images/image12.png)
+
+### Keunggulan Topologi Pohon ( Tree ) :
+- **Ideal untuk Jaringan Besar** : Cocok untuk kampus atau gedung bertingkat.
+- **Ekspansi Fleksibel** : Setiap cabang dapat dikembangkan secara independen.
+- **Manajemen Terstruktur** : Monitoring dan kontrol dapat dilakukan per segmen.
+
+### Kelemahan Topologi Pohon ( Tree ) :
+- **Ketergantungan Backbone** : Jika tulang punggung rusak, sebagian besar jaringan terisolasi.
+- **Implementasi Kompleks** : Perlu perencanaan yang matang untuk kabel dan perangkat.
+- **Biaya Signifikan** : Membutuhkan banyak infrastruktur kabel dan perangkat jaringan.
+
+## Topologi Mesh
+
+Setiap perangkat terhubung langsung ke semua perangkat lain dalam jaringan, menciptakan jalur redundansi yang maksimal. Ada dua jenis: mesh penuh (setiap perangkat terhubung ke semua perangkat) dan mesh parsial (hanya beberapa yang memiliki koneksi lengkap).
+
+![Diagram Topologi Mesh](images/image13.png)
+
+### Keunggulan Topologi Mesh :
+- **Keandalan Maksimal** : Redundansi tinggi memastikan konektivitas tetap ada meski beberapa jalur rusak.
+- **Kinerja Optimal** : Beban jaringan terdistribusi merata.
+- **Keamanan Tinggi** : Sulit disadap karena komunikasi point-to-point.
+
+### Kelemahan Topologi Mesh :
+- **Biaya Sangat Tinggi** : Membutuhkan jumlah kabel dan port yang sangat banyak.
+- **Instalasi Rumit** : Konfigurasi dan pemasangan membutuhkan waktu lama.
+- **Pemeliharaan Sulit** : Manajemen koneksi yang banyak menjadi sangat kompleks.`,
+        category: "informatika",
+        date: "2026-07-26",
+        status: "Materi Topologi",
+        link: ""
+      },
+
+      // INFORMATIKA POST 3: SISTEM DIGITAL
+      {
+        id: "3",
+        title: "Materi Informatika: Sistem Digital & Bilangan Biner",
+        summary: "Memahami konsep Sistem Digital, fungsi pengolahan data biner (0 dan 1), serta alasan utama perlunya bilangan biner pada perangkat komputer.",
+        content: `# Materi Sistem Digital
+
+## Apa itu sistem digital? Apa fungsinya dalam dunia teknologi?
+
+Sistem digital adalah sistem yang bekerja hanya dengan dua angka yaitu **1 dan 0**. Ini adalah bahasa dasar yang dipahami oleh semua perangkat teknologi, dari laptop sampai ponsel.
+
+![Sistem Digital 0 dan 1](images/image14.png)
+
+Fungsinya untuk membuat segala informasi (suara, teks, gambar, video) menjadi seragam dan mudah diproses. Dengan menyederhanakan data menjadi bentuk angka 1 dan 0, sistem digital memungkinkan data disimpan, dikirim, dan diolah dengan cepat, akurat, serta tahan terhadap gangguan noise (misalnya pada sinyal).
+
+---
+
+## Kenapa kita butuh bilangan biner?
+
+Alasan utamanya sederhana: karena biner itu mudah direpresentasikan dalam perangkat elektronik. Dalam hardware, angka 1 bisa berarti **"ada sinyal listrik"** dan 0 berarti **"tidak ada sinyal"**. 
+
+![Sinyal Listrik pada Perangkat Biner](images/image15.jpg)
+
+Sistem biner sangat stabil dan mudah diimplementasikan dalam sirkuit elektronik tidak perlu kompromi dengan nilai tengah. Kalau pakai bilangan desimal, komputer harus bisa membedakan 10 tingkat tegangan, yang sulit, mahal, dan rawan error.`,
+        category: "informatika",
+        date: "2026-07-24",
+        status: "Materi Sistem Digital",
+        link: ""
+      },
+
+      // BAHASA INDONESIA POST 1: TEKS ANEKDOT
+      {
+        id: "4",
+        title: "Materi Bahasa Indonesia: Teks Anekdot",
+        summary: "Pengertian, Tujuan, Struktur (Abstraksi, Orientasi, Krisis, Reaksi, Koda), serta Kaidah Kebahasaan Teks Anekdot.",
+        content: `# Materi Bahasa Indonesia: Teks Anekdot
+
+## 1. Pengertian Teks Anekdot
+Teks anekdot adalah cerita singkat yang menarik, lucu, mengesankan, dan biasanya berisi kritik atau sindiran halus mengenai kejadian nyata yang melibatkan tokoh publik, pejabat, atau fenomena sosial di masyarakat.
+
+## 2. Tujuan Teks Anekdot
+- Menyampaikan ide, kritik sosial, atau sindiran secara halus dan santun tanpa menyinggung secara vulgar.
+- Hiburan bagi pembaca sekaligus media edukasi moral dan kesadaran sosial.
+
+## 3. Struktur Teks Anekdot
+1. **Abstraksi**: Bagian pembuka yang memberikan gambaran umum tentang isi teks.
+2. **Orientasi**: Bagian yang menunjukkan latar belakang terjadinya peristiwa atau awal mula cerita.
+3. **Krisis**: Bagian inti cerita yang berisi puncak masalah, keunikan, atau kekonyolan utama.
+4. **Reaksi**: Bagian cara tokoh menyelesaikan masalah atau merespons krisis tersebut.
+5. **Koda**: Bagian penutup yang berisi simpulan atau pesan perubahan (opsional).
+
+## 4. Kaidah Kebahasaan Teks Anekdot
+- **Kalimat Peristiwa Masa Lalu**: Menggunakan kata seperti *kemarin*, *pada suatu hari*, *suatu ketika*.
+- **Konjungsi Temporal**: Kata hubung urutan waktu (*lalu*, *kemudian*, *setelah itu*).
+- **Kata Kerja Aksi**: Kata kerja tindakan fisik (*menulis*, *berjalan*, *berteriak*).
+- **Kalimat Retoris**: Pertanyaan yang tidak membutuhkan jawaban.
+- **Kalimat Sindiran/Kiasan**: Penggunaan majas ironi atau sinisme secara halus.`,
+        category: "bahasa_indonesia",
+        date: "2026-07-22",
+        status: "Materi Anekdot",
+        link: ""
+      },
+
+      // BAHASA INDONESIA POST 2: TEKS DESKRIPSI
+      {
+        id: "5",
+        title: "Materi Bahasa Indonesia: Teks Deskripsi",
+        summary: "Pengertian, Tujuan, Struktur (Identifikasi, Deskripsi Bagian, Simpulan), serta Kaidah Kebahasaan Teks Deskripsi.",
+        content: `# Materi Bahasa Indonesia: Teks Deskripsi
+
+## 1. Pengertian Teks Deskripsi
+Teks deskripsi adalah paragraf atau karangan yang menggambarkan suatu objek, tempat, atau suasana secara jelas dan terperinci sehingga pembaca seolah-olah dapat melihat, mendengar, mencium, atau merasakan sendiri apa yang dideskripsikan.
+
+## 2. Tujuan Teks Deskripsi
+Membawa pembaca seolah-olah terlibat langsung merasai dan membayangkan keindahan, keunikan, atau kondisi objek fisik/non-fisik yang sedang dipaparkan penulis.
+
+## 3. Struktur Teks Deskripsi
+1. **Identifikasi / Gambaran Umum**: Berisi penetapan identitas objek, nama, lokasi, dan pengantar topik.
+2. **Deskripsi Bagian**: Rincian gambaran fisik atau bagian-bagian objek secara spesifik (warna, bentuk, aroma, suasana).
+3. **Simpulan / Kesan**: Tanggapan pribadi atau kesan umum penulis terhadap objek yang dideskripsikan.
+
+## 4. Kaidah Kebahasaan Teks Deskripsi
+- **Kata Sifat (Adjektiva)**: Kata yang menggambarkan kondisi objek (*indah*, *luas*, *merona*, *tenang*).
+- **Kata Kerja Material/Pancaindra**: Kata yang berhubungan dengan penglihatan, pendengaran, dan perabaan.
+- **Frasa Nomina**: Menggunakan kelompok kata benda (*pantai berpasir putih*, *gadis berambut panjang*).
+- **Majas Kiasan / Citraan**: Menggunakan kiasan seperti personifikasi atau metafora (*ombak menari-nari di tepi pantai*).`,
+        category: "bahasa_indonesia",
+        date: "2026-07-20",
+        status: "Materi Deskripsi",
+        link: ""
+      },
+
+      // BAHASA INDONESIA POST 3: TEKS PROSEDUR
+      {
+        id: "6",
+        title: "Materi Bahasa Indonesia: Teks Prosedur",
+        summary: "Pengertian, Tujuan, Struktur (Tujuan, Material, Langkah-langkah, Penutup), serta Kaidah Kebahasaan Teks Prosedur.",
+        content: `# Materi Bahasa Indonesia: Teks Prosedur
+
+## 1. Pengertian Teks Prosedur
+Teks prosedur adalah teks yang berisi petunjuk atau langkah-langkah kerja yang berurutan secara sistematis untuk membuat, mengoperasikan, atau melakukan suatu kegiatan hingga selesai.
+
+## 2. Tujuan Teks Prosedur
+Petunjuk bagi pembaca agar dapat melakukan atau membuat sesuatu secara runtut, benar, efisien, dan mencapai hasil yang diinginkan tanpa kesalahan.
+
+## 3. Struktur Teks Prosedur
+1. **Tujuan / Pengantar**: Menyebutkan judul serta hasil akhir yang akan dicapai.
+2. **Material (Bahan & Alat)**: Rincian persediaan alat dan bahan yang dibutuhkan (lengkap dengan takaran).
+3. **Langkah-Langkah**: Urutan tindakan yang harus dilakukan secara kronologis dan tidak boleh terbalik.
+4. **Penutup / Reorientasi**: Simpulan atau apresiasi ucapan selamat mencoba.
+
+## 4. Kaidah Kebahasaan Teks Prosedur
+- **Kalimat Imperatif (Perintah)**: Kata seperti *tuangkan*, *aduklah*, *masukkan*, *tekan tombol*.
+- **Konjungsi Temporal**: Kata penghubung urutan (*pertama*, *kedua*, *selanjutnya*, *kemudian*, *akhirnya*).
+- **Kata Keterangan Kuantitas & Cara**: Keterangan yang rinci (*tuangkan 200ml air*, *aduk secara perlahan selama 5 menit*).
+- **Kata Kerja Aktif**: Kata kerja yang diawali awalan me- atau kata aksi (*memotong*, *mencampur*).`,
+        category: "bahasa_indonesia",
+        date: "2026-07-18",
+        status: "Materi Prosedur",
+        link: ""
+      },
+
+      // BAHASA INDONESIA POST 4: TEKS NEGOSIASI
+      {
+        id: "7",
+        title: "Materi Bahasa Indonesia: Teks Negosiasi",
+        summary: "Pengertian, Tujuan, Struktur (Orientasi, Pengajuan, Penawaran, Persetujuan, Penutup), serta Kaidah Kebahasaan Teks Negosiasi.",
+        content: `# Materi Bahasa Indonesia: Teks Negosiasi
+
+## 1. Pengertian Teks Negosiasi
+Teks negosiasi adalah bentuk interaksi sosial yang dilakukan oleh dua pihak atau lebih yang memiliki perbedaan kepentingan, untuk mencapai kesepakatan bersama yang saling menguntungkan (*win-win solution*).
+
+## 2. Tujuan Teks Negosiasi
+- Mencapai jalan keluar bersama atas perbedaan pendapat atau harga.
+- Menghindari konflik dan kerugian di salah satu pihak.
+
+## 3. Struktur Teks Negosiasi
+1. **Orientasi**: Kalimat pembuka, salam, dan sapaan awal untuk memulai interaksi.
+2. **Pengajuan**: Pihak pertama menyampaikan maksud, barang, jasa, atau keinginan yang ditawarkan.
+3. **Penawaran**: Pihak kedua menawar atau merespons pengajuan dengan pertimbangan tertentu.
+4. **Persetujuan**: Kesepakatan akhir yang dicapai setelah pertimbangan bersama.
+5. **Penutup**: Kalimat salam penutup atau apresiasi transaksi yang selesai.
+
+## 4. Kaidah Kebahasaan Teks Negosiasi
+- **Bahasa Persuasif & Santun**: Menggunakan kata-kata yang sopan untuk meyakinkan mitra (*mohon*, *tolong*, *bagaimana kalau*).
+- **Kalimat Deklaratif & Interogatif**: Kalimat berita dan pertanyaan penawaran.
+- **Pasangan Tuturan**: Interaksi tanya-jawab (mengucapkan salam - membalas salam, menawar - menerima/menolak).
+- **Pronomina (Kata Ganti)**: Menggunakan kata ganti *Saya*, *Kami*, *Anda*, *Bapak/Ibu*.`,
+        category: "bahasa_indonesia",
+        date: "2026-07-16",
+        status: "Materi Negosiasi",
+        link: ""
+      }
+    ];
+
+    const defaultStickyNotes = [
+      { id: "s1", text: "Pelajari gerbang logika XOR & tabel kebenaran Informatika 💻", color: "bg-pink-100 dark:bg-pink-950/40 border-pink-200 dark:border-pink-900/30 text-pink-800 dark:text-pink-300" },
+      { id: "s2", text: "Hafalkan 5 struktur teks anekdot (Abstraksi - Koda) 📖", color: "bg-purple-100 dark:bg-purple-950/40 border-purple-200 dark:border-purple-900/30 text-purple-800 dark:text-purple-300" },
+      { id: "s3", text: "Siapkan slide presentasi kelompok Ekonomi hari Kamis 🚀", color: "bg-blue-100 dark:bg-blue-950/40 border-blue-200 dark:border-blue-900/30 text-blue-800 dark:text-blue-300" }
+    ];
+
+    const defaultProfile = {
+      name: "Grace Caroline",
+      role: "Pelajar SMA Kelas 11.3 / Pembuat Konten Digital",
+      bio: "Halo! Nama saya Grace Caroline. Saat ini saya adalah seorang siswi sekolah menengah (Kelas 11.3) yang aktif mengeksplorasi dunia informatika, pemrosesan informasi, serta tata Bahasa Indonesia.\n\nMelalui website ini, saya mengarsipkan jadwal pelajaran kelas 11.3, catatan materi sekolah, dan kumpulan tugas pribadi yang dapat dibaca dan dipelajari secara bebas.\n\nSaya percaya bahwa membagikan apa yang kita pelajari di internet adalah salah satu metode belajar terbaik untuk tumbuh dan berkembang bersama.",
+      avatar: "avatar.png",
+      instagram: "https://www.instagram.com/grce.carolinee?igsh=b2RwbW54aHcyb3B2&utm_source=qr",
+      tiktok: "https://www.tiktok.com/@grace.carolll?_r=1&_t=ZS-98CwUyilcHM",
+      whatsapp: "https://wa.me/6281388434796",
+      skills: {
+        coding: 85,
+        design: 90,
+        writing: 80,
+        presentation: 75
+      },
+      history: [
+        { school: "Sekolah Menengah Atas (SMA Cinta Kasih Tzu Chi)", period: "2024 - Sekarang", desc: "Kelas 11.3 / Peminatan Informatika & Sosial" },
+        { school: "Sekolah Menengah Pertama (SMP)", period: "2021 - 2024", desc: "Lulus dengan Nilai Akademik Terbaik" }
+      ]
+    };
+
+    const scheduleData = {
+      senin: [
+        { name: "Upacara/Pendampingan Wali Kelas/Info Day", time: "06.30–07.30", type: "practice" },
+        { name: "Sosiologi", time: "07.30–08.15", type: "social" },
+        { name: "Sosiologi", time: "08.15–09.00", type: "social" },
+        { name: "Istirahat", time: "09.00–09.30", type: "break" },
+        { name: "Mandarin", time: "09.30–10.10", type: "language" },
+        { name: "Mandarin", time: "10.10–10.50", type: "language" },
+        { name: "Budi Pekerti", time: "10.50–11.30", type: "practice" },
+        { name: "B. Humanis", time: "11.30–12.10", type: "practice" },
+        { name: "Istirahat", time: "12.10–12.40", type: "break" },
+        { name: "Matematika Wajib", time: "12.40–13.20", type: "science" },
+        { name: "Ekonomi", time: "13.20–14.00", type: "social" },
+        { name: "Ekonomi", time: "14.00–14.40", type: "social" }
+      ],
+      selasa: [
+        { name: "Pembiasaan Awal", time: "06.30–06.45", type: "break" },
+        { name: "Agama", time: "06.45–07.30", type: "practice" },
+        { name: "Agama", time: "07.30–08.15", type: "practice" },
+        { name: "Bahasa Indonesia", time: "08.15–09.00", type: "language" },
+        { name: "Bahasa Indonesia", time: "09.00–09.45", type: "language" },
+        { name: "Istirahat", time: "09.45–10.05", type: "break" },
+        { name: "Geografi", time: "10.05–10.50", type: "social" },
+        { name: "Geografi", time: "10.50–11.35", type: "social" },
+        { name: "Istirahat", time: "11.35–12.00", type: "break" },
+        { name: "Ekonomi", time: "12.00–12.40", type: "social" },
+        { name: "Ekonomi", time: "12.40–13.20", type: "social" },
+        { name: "Sosiologi", time: "13.20–14.00", type: "social" },
+        { name: "Sosiologi", time: "14.00–14.30", type: "social" }
+      ],
+      rabu: [
+        { name: "Pembiasaan Awal", time: "06.30–06.45", type: "break" },
+        { name: "Informatika", time: "06.45–07.30", type: "science" },
+        { name: "Informatika", time: "07.30–08.15", type: "science" },
+        { name: "Mandarin", time: "08.15–09.00", type: "language" },
+        { name: "Istirahat", time: "09.00–09.30", type: "break" },
+        { name: "Mandarin", time: "09.30–10.10", type: "language" },
+        { name: "Sosiologi", time: "10.10–10.50", type: "social" },
+        { name: "Bahasa Indonesia", time: "10.50–11.30", type: "language" },
+        { name: "Kokurikuler", time: "11.30–12.10", type: "practice" },
+        { name: "Istirahat", time: "12.10–12.40", type: "break" },
+        { name: "Sejarah", time: "12.40–13.20", type: "social" },
+        { name: "Sejarah", time: "13.20–14.00", type: "social" },
+        { name: "Seni Budaya", time: "14.00–14.40", type: "practice" },
+        { name: "Seni Budaya", time: "14.40–15.20", type: "practice" }
+      ],
+      kamis: [
+        { name: "Pembiasaan Awal", time: "06.30–06.45", type: "break" },
+        { name: "Informatika", time: "06.45–07.30", type: "science" },
+        { name: "Informatika", time: "07.30–08.15", type: "science" },
+        { name: "Matematika Wajib", time: "08.15–09.00", type: "science" },
+        { name: "Istirahat", time: "09.00–09.30", type: "break" },
+        { name: "Matematika Wajib", time: "09.30–10.15", type: "science" },
+        { name: "PKN", time: "10.15–11.00", type: "social" },
+        { name: "PKN", time: "11.00–11.45", type: "social" },
+        { name: "Istirahat", time: "11.45–12.30", type: "break" },
+        { name: "Inggris", time: "12.30–13.15", type: "language" },
+        { name: "Inggris", time: "13.15–13.55", type: "language" },
+        { name: "Inggris", time: "13.55–14.35", type: "language" },
+        { name: "Ekonomi", time: "14.35–15.15", type: "social" }
+      ],
+      jumat: [
+        { name: "Jumat Bersih/Sehat/Literasi/Ekspresi/Public Speaking", time: "06.30–07.15", type: "practice" },
+        { name: "PKWU", time: "07.15–08.00", type: "practice" },
+        { name: "PKWU", time: "08.00–08.45", type: "practice" },
+        { name: "Istirahat", time: "08.45–09.15", type: "break" },
+        { name: "PJOK", time: "09.15–10.00", type: "practice" },
+        { name: "PJOK", time: "10.00–10.45", type: "practice" },
+        { name: "Bimbingan Konseling", time: "10.45–11.30", type: "practice" },
+        { name: "Jumat Ibadah", time: "11.30–12.30", type: "practice" },
+        { name: "Istirahat", time: "12.30–13.00", type: "break" },
+        { name: "Geografi", time: "13.00–13.45", type: "social" },
+        { name: "Geografi", time: "13.45–14.30", type: "social" }
+      ]
+    };
+
+    const quotes = [
+      { text: "Pendidikan bukanlah proses mengisi wadah yang kosong, melainkan menyalakan api pikiran agar terus berkembang.", author: "Grace Caroline" },
+      { text: "Dalam dunia Informatika, setiap masalah besar selalu bisa dipecahkan menjadi algoritma-algoritma kecil yang sederhana.", author: "Informatika 11.3" },
+      { text: "Bahasa adalah cermin pikiran. Dengan menguasai struktur bahasa yang baik, kita menguasai komunikasi peradaban.", author: "Bahasa Indonesia" },
+      { text: "Setiap baris kode dan catatan yang kita tulis hari ini adalah investasi untuk masa depan kita.", author: "Grace's Journal" }
+    ];
+
+    const memoryIcons = ['💻', '🎨', '🚀', '⚡', '🎮', '🧠'];
+    const quizQuestions = [
+      { q: "Apa bentuk unit data terkecil dalam sistem komputer?", options: ["Byte", "Bit (0 & 1)", "Pixel", "RAM"], answer: 1 },
+      { q: "Topologi jaringan apa yang menghubungkan komputer secara berantai melingkar?", options: ["Star", "Bus", "Ring", "Mesh"], answer: 2 },
+      { q: "Perangkat lunak pengolah kata utama yang dipelajari di kelas?", options: ["Microsoft Excel", "Microsoft Word", "Photoshop", "VLC"], answer: 1 },
+      { q: "Data mentah yang telah diolah menjadi sesuatu yang berguna disebut?", options: ["Hardware", "Informasi", "Biner", "Bug"], answer: 1 },
+      { q: "Proses mengamankan data dengan mengubahnya menjadi kode khusus dinamakan?", options: ["Enkripsi", "Algoritma", "Posting", "Rendering"], answer: 0 }
+    ];
+
+    // ==================== GLOBAL STATE VARIABLES ====================
+    let posts = [];
+    let stickyNotes = [];
+    let profile = {};
+    let activeMobileDay = "senin";
+    let tempAvatarBase64 = null;
+    let isSenoritaAudioPlaying = false;
+
+    let memoryCards = [];
+    let flippedCards = [];
+    let memoryMoves = 0;
+    let memoryMatches = 0;
+    let isMemoryLock = false;
+
+    let currentQuizIndex = 0;
+    let quizScore = 0;
+
+    // ==================== INISIALISASI APLIKASI ====================
+    window.addEventListener("DOMContentLoaded", () => {
+      initTheme();
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+      }
+      const dateElem = document.getElementById("post-date");
+      if (dateElem) {
+        dateElem.value = new Date().toISOString().split("T")[0];
+      }
+      loadAppData();
+
+      renderProfile();
+      renderStats();
+      renderRecentPosts();
+      renderPostsGrid("informatika");
+      renderPostsGrid("bahasa_indonesia");
+      renderStickyNotes();
+
+      activeMobileDay = getActiveMobileDay();
+      renderSchedule5Grid();
+      selectScheduleDay(activeMobileDay);
+      renderDashboardSchedule();
+      initMemoryGame();
+      initAudioListeners();
+    });
+
+    // ==================== PENGELOLA TEMA (DARK / LIGHT MODE) ====================
+    function initTheme() {
+      const storedTheme = safeLocalStorageGet("grace_portfolio_theme");
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const toggleIcon = document.getElementById("theme-toggle-icon");
+
+      if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+        document.documentElement.classList.add("dark");
+        if (toggleIcon) toggleIcon.setAttribute("data-lucide", "sun");
+      } else {
+        document.documentElement.classList.remove("dark");
+        if (toggleIcon) toggleIcon.setAttribute("data-lucide", "moon");
+      }
+    }
+
+    function toggleDarkMode() {
+      const isDark = document.documentElement.classList.contains("dark");
+      const iconElement = document.getElementById("theme-toggle-icon");
+      if (isDark) {
+        document.documentElement.classList.remove("dark");
+        safeLocalStorageSet("grace_portfolio_theme", "light");
+        if (iconElement) iconElement.setAttribute("data-lucide", "moon");
+      } else {
+        document.documentElement.classList.add("dark");
+        safeLocalStorageSet("grace_portfolio_theme", "dark");
+        if (iconElement) iconElement.setAttribute("data-lucide", "sun");
+      }
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+      }
+    }
+
+    // ==================== PENGELOLA DATA LOCAL STORAGE ====================
+    function loadAppData() {
+      const storedPosts = safeLocalStorageGet("grace_portfolio_posts_v4");
+      if (storedPosts) {
+        try {
+          posts = JSON.parse(storedPosts);
+        } catch (e) {
+          posts = [...defaultPosts];
+        }
+      } else {
+        posts = [...defaultPosts];
+        safeLocalStorageSet("grace_portfolio_posts_v4", JSON.stringify(posts));
+      }
+
+      const storedSticky = safeLocalStorageGet("grace_portfolio_sticky");
+      if (storedSticky) {
+        try {
+          stickyNotes = JSON.parse(storedSticky);
+        } catch (e) {
+          stickyNotes = [...defaultStickyNotes];
+        }
+      } else {
+        stickyNotes = [...defaultStickyNotes];
+        safeLocalStorageSet("grace_portfolio_sticky", JSON.stringify(stickyNotes));
+      }
+
+      const storedProfile = safeLocalStorageGet("grace_portfolio_profile");
+      if (storedProfile) {
+        try {
+          profile = JSON.parse(storedProfile);
+          profile.instagram = defaultProfile.instagram;
+          profile.tiktok = defaultProfile.tiktok;
+          profile.whatsapp = defaultProfile.whatsapp;
+        } catch (e) {
+          profile = { ...defaultProfile };
+        }
+      } else {
+        profile = { ...defaultProfile };
+        safeLocalStorageSet("grace_portfolio_profile", JSON.stringify(profile));
+      }
+    }
+
+    function savePosts() {
+      safeLocalStorageSet("grace_portfolio_posts_v4", JSON.stringify(posts));
+      renderStats();
+      renderRecentPosts();
+      renderPostsGrid("informatika");
+      renderPostsGrid("bahasa_indonesia");
+    }
+
+    // ==================== SENORITA MP3 AUDIO PLAYER CONTROLLER ====================
+    function toggleSenoritaAudio() {
+      const audio = document.getElementById("senorita-audio-player");
+      const playIcon = document.getElementById("senorita-play-icon");
+      const vinylPulse = document.getElementById("vinyl-pulse");
+      const discIcon = document.getElementById("senorita-disc-icon");
+      if (!audio) return;
+
+      if (audio.paused) {
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            isSenoritaAudioPlaying = true;
+            if (playIcon) playIcon.setAttribute("data-lucide", "pause");
+            if (vinylPulse) vinylPulse.classList.remove("hidden");
+            if (discIcon) discIcon.classList.add("animate-spin");
+            if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+          }).catch(err => {
+            console.warn("Audio playback diproteksi atau gagal:", err);
+            isSenoritaAudioPlaying = false;
+            if (playIcon) playIcon.setAttribute("data-lucide", "play");
+            if (vinylPulse) vinylPulse.classList.add("hidden");
+            if (discIcon) discIcon.classList.remove("animate-spin");
+            if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+          });
+        }
+      } else {
+        audio.pause();
+        isSenoritaAudioPlaying = false;
+        if (playIcon) playIcon.setAttribute("data-lucide", "play");
+        if (vinylPulse) vinylPulse.classList.add("hidden");
+        if (discIcon) discIcon.classList.remove("animate-spin");
+        if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+      }
+    }
+
+    function skipAudio(seconds) {
+      const audio = document.getElementById("senorita-audio-player");
+      if (audio && audio.duration) {
+        audio.currentTime = Math.max(0, Math.min(audio.duration, audio.currentTime + seconds));
+      }
+    }
+
+    function formatTime(seconds) {
+      if (isNaN(seconds) || seconds < 0) return "00:00";
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    function initAudioListeners() {
+      const audio = document.getElementById("senorita-audio-player");
+      const progressBar = document.getElementById("audio-progress-bar");
+      const currentTimeElem = document.getElementById("audio-current-time");
+      const durationElem = document.getElementById("audio-duration");
+      const playIcon = document.getElementById("senorita-play-icon");
+      const vinylPulse = document.getElementById("vinyl-pulse");
+      const discIcon = document.getElementById("senorita-disc-icon");
+
+      if (!audio) return;
+
+      audio.addEventListener("loadedmetadata", () => {
+        if (durationElem) durationElem.textContent = formatTime(audio.duration);
+      });
+
+      audio.addEventListener("timeupdate", () => {
+        if (currentTimeElem) currentTimeElem.textContent = formatTime(audio.currentTime);
+        if (durationElem && audio.duration && (durationElem.textContent === "00:00" || durationElem.textContent === "0:00")) {
+          durationElem.textContent = formatTime(audio.duration);
+        }
+        if (progressBar && audio.duration) {
+          progressBar.value = (audio.currentTime / audio.duration) * 100;
+        }
+      });
+
+      if (progressBar) {
+        progressBar.addEventListener("input", () => {
+          if (audio.duration) {
+            audio.currentTime = (progressBar.value / 100) * audio.duration;
+          }
+        });
+      }
+
+      audio.addEventListener("ended", () => {
+        isSenoritaAudioPlaying = false;
+        if (playIcon) playIcon.setAttribute("data-lucide", "play");
+        if (vinylPulse) vinylPulse.classList.add("hidden");
+        if (discIcon) discIcon.classList.remove("animate-spin");
+        if (progressBar) progressBar.value = 0;
+        if (currentTimeElem) currentTimeElem.textContent = "00:00";
+        if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+      });
+    }
+
+    // ==================== MINI GAME CONTROLLER ====================
+    function switchMiniGame(gameType) {
+      const memoryContainer = document.getElementById("game-memory-container");
+      const quizContainer = document.getElementById("game-quiz-container");
+      const tabMemory = document.getElementById("tab-game-memory");
+      const tabQuiz = document.getElementById("tab-game-quiz");
+
+      if (!memoryContainer || !quizContainer || !tabMemory || !tabQuiz) return;
+
+      if (gameType === 'memory') {
+        memoryContainer.classList.remove("hidden");
+        quizContainer.classList.add("hidden");
+        tabMemory.className = "px-2.5 py-1 text-[10px] font-bold rounded-md transition-all bg-white dark:bg-slate-700 text-pastel-pinkdark dark:text-pink-300 shadow-2xs";
+        tabQuiz.className = "px-2.5 py-1 text-[10px] font-bold rounded-md transition-all text-pastel-gray dark:text-slate-400 hover:text-pastel-pinkdark";
+      } else {
+        memoryContainer.classList.add("hidden");
+        quizContainer.classList.remove("hidden");
+        tabQuiz.className = "px-2.5 py-1 text-[10px] font-bold rounded-md transition-all bg-white dark:bg-slate-700 text-pastel-pinkdark dark:text-pink-300 shadow-2xs";
+        tabMemory.className = "px-2.5 py-1 text-[10px] font-bold rounded-md transition-all text-pastel-gray dark:text-slate-400 hover:text-pastel-pinkdark";
+        initQuizGame();
+      }
+    }
+
+    // --- MEMORY MATCH GAME ---
+    function initMemoryGame() {
+      memoryMoves = 0;
+      memoryMatches = 0;
+      isMemoryLock = false;
+      flippedCards = [];
+      const movesElem = document.getElementById("memory-moves");
+      const matchesElem = document.getElementById("memory-matches");
+      const winElem = document.getElementById("memory-win-msg");
+      if (movesElem) movesElem.textContent = "0";
+      if (matchesElem) matchesElem.textContent = "0/6";
+      if (winElem) winElem.classList.add("hidden");
+
+      const deck = [...memoryIcons, ...memoryIcons].sort(() => Math.random() - 0.5);
+      memoryCards = deck;
+
+      const grid = document.getElementById("memory-grid");
+      if (!grid) return;
+      grid.innerHTML = "";
+
+      deck.forEach((icon, idx) => {
+        const cardBtn = document.createElement("button");
+        cardBtn.className = "memory-card h-12 rounded-xl bg-gradient-to-br from-pastel-pinklight to-purple-100 dark:from-slate-800 dark:to-slate-850 border border-pastel-pink/40 dark:border-slate-700 flex items-center justify-center text-lg font-bold transition-all transform duration-200 hover:scale-105 active:scale-95 shadow-2xs cursor-pointer select-none";
+        cardBtn.dataset.index = idx;
+        cardBtn.dataset.icon = icon;
+        cardBtn.innerHTML = `<span class="card-icon hidden">${icon}</span><span class="card-back text-pastel-pinkdark dark:text-pink-400 text-xs font-black">?</span>`;
+        cardBtn.onclick = () => flipMemoryCard(cardBtn, idx, icon);
+        grid.appendChild(cardBtn);
+      });
+    }
+
+    function flipMemoryCard(btn, idx, icon) {
+      if (isMemoryLock || !btn) return;
+      if (btn.classList.contains("matched") || btn.classList.contains("flipped")) return;
+
+      btn.classList.add("flipped", "bg-white", "dark:bg-slate-700");
+      const cardBack = btn.querySelector(".card-back");
+      const cardIcon = btn.querySelector(".card-icon");
+      if (cardBack) cardBack.classList.add("hidden");
+      if (cardIcon) cardIcon.classList.remove("hidden");
+
+      flippedCards.push({ btn, idx, icon });
+
+      if (flippedCards.length === 2) {
+        memoryMoves++;
+        const movesElem = document.getElementById("memory-moves");
+        if (movesElem) movesElem.textContent = memoryMoves;
+        checkMemoryMatch();
+      }
+    }
+
+    function checkMemoryMatch() {
+      isMemoryLock = true;
+      const [c1, c2] = flippedCards;
+
+      if (c1.icon === c2.icon) {
+        c1.btn.classList.add("matched", "border-emerald-400", "bg-emerald-50", "dark:bg-emerald-950/60");
+        c2.btn.classList.add("matched", "border-emerald-400", "bg-emerald-50", "dark:bg-emerald-950/60");
+        memoryMatches++;
+        const matchesElem = document.getElementById("memory-matches");
+        if (matchesElem) matchesElem.textContent = `${memoryMatches}/6`;
+        flippedCards = [];
+        isMemoryLock = false;
+
+        if (memoryMatches === 6) {
+          const winElem = document.getElementById("memory-win-msg");
+          if (winElem) winElem.classList.remove("hidden");
+        }
+      } else {
+        setTimeout(() => {
+          c1.btn.classList.remove("flipped", "bg-white", "dark:bg-slate-700");
+          const b1Back = c1.btn.querySelector(".card-back");
+          const b1Icon = c1.btn.querySelector(".card-icon");
+          if (b1Back) b1Back.classList.remove("hidden");
+          if (b1Icon) b1Icon.classList.add("hidden");
+
+          c2.btn.classList.remove("flipped", "bg-white", "dark:bg-slate-700");
+          const b2Back = c2.btn.querySelector(".card-back");
+          const b2Icon = c2.btn.querySelector(".card-icon");
+          if (b2Back) b2Back.classList.remove("hidden");
+          if (b2Icon) b2Icon.classList.add("hidden");
+
+          flippedCards = [];
+          isMemoryLock = false;
+        }, 700);
+      }
+    }
+
+    // --- QUICK QUIZ GAME ---
+    function initQuizGame() {
+      currentQuizIndex = 0;
+      quizScore = 0;
+      renderQuizQuestion();
+    }
+
+    function renderQuizQuestion() {
+      const qNum = document.getElementById("quiz-current-num");
+      const qScore = document.getElementById("quiz-score");
+      const qText = document.getElementById("quiz-question-text");
+      const qOptions = document.getElementById("quiz-options");
+      const quizBody = document.getElementById("quiz-body");
+
+      if (!quizBody || !qText || !qOptions) return;
+
+      if (currentQuizIndex >= quizQuestions.length) {
+        quizBody.innerHTML = `
+          <div class="text-center py-4 space-y-2.5">
+            <div class="w-10 h-10 mx-auto rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-300 flex items-center justify-center text-lg font-bold">
+              🏆
+            </div>
+            <h5 class="text-xs font-bold text-pastel-slate dark:text-white">Kuis Selesai!</h5>
+            <p class="text-xs text-pastel-gray dark:text-slate-400">Skor Kamu: <span class="font-extrabold text-emerald-600 dark:text-emerald-400 text-sm">${quizScore}/100</span></p>
+            <button onclick="initQuizGame()" class="px-3 py-1.5 rounded-lg bg-pastel-pink text-white text-xs font-bold hover:bg-pastel-pinkdark transition-all">Ulangi Kuis</button>
+          </div>
+        `;
+        return;
+      }
+
+      if (qNum) qNum.textContent = currentQuizIndex + 1;
+      if (qScore) qScore.textContent = quizScore;
+      qText.textContent = quizQuestions[currentQuizIndex].q;
+
+      const q = quizQuestions[currentQuizIndex];
+      qOptions.innerHTML = "";
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "w-full text-left px-2.5 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-pastel-pinklight/40 dark:hover:bg-slate-700 border border-pastel-pinklight/40 dark:border-slate-700 text-xs font-medium text-pastel-slate dark:text-slate-200 transition-all flex items-center justify-between";
+        btn.innerHTML = `<span>${String.fromCharCode(65 + idx)}. ${opt}</span><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-pastel-pinkdark opacity-60"></i>`;
+        btn.onclick = () => selectQuizAnswer(idx, q.answer, btn);
+        qOptions.appendChild(btn);
+      });
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    function selectQuizAnswer(selectedIdx, correctIdx, btn) {
+      const allBtns = document.querySelectorAll("#quiz-options button");
+      allBtns.forEach(b => b.disabled = true);
+
+      if (selectedIdx === correctIdx) {
+        btn.classList.add("bg-emerald-100", "dark:bg-emerald-950", "border-emerald-400", "text-emerald-700", "dark:text-emerald-300");
+        quizScore += 20;
+      } else {
+        btn.classList.add("bg-rose-100", "dark:bg-rose-950", "border-rose-400", "text-rose-700", "dark:text-rose-300");
+        if (allBtns[correctIdx]) {
+          allBtns[correctIdx].classList.add("bg-emerald-100", "dark:bg-emerald-950", "border-emerald-400", "text-emerald-700", "dark:text-emerald-300");
+        }
+      }
+
+      setTimeout(() => {
+        currentQuizIndex++;
+        renderQuizQuestion();
+      }, 900);
+    }
+
+    function saveStickyNotes() {
+      safeLocalStorageSet("grace_portfolio_sticky", JSON.stringify(stickyNotes));
+      renderStickyNotes();
+    }
+
+    // ==================== SPA TAB ROUTING (Navigasi Antar Halaman) ====================
+    function switchTab(tabId) {
+      const sections = ["dashboard", "jadwal", "profil", "informatika", "bahasa_indonesia"];
+
+      sections.forEach(sec => {
+        const secElement = document.getElementById(`section-${sec}`);
+        const navElement = document.getElementById(`nav-${sec}`);
+
+        if (sec === tabId) {
+          if (secElement) {
+            secElement.classList.remove("hidden");
+            setTimeout(() => {
+              secElement.classList.remove("opacity-0");
+              secElement.classList.add("opacity-100");
+            }, 40);
+          }
+
+          if (navElement) {
+            navElement.className = "px-3.5 py-2 rounded-xl text-xs lg:text-sm font-bold transition-all duration-200 text-pastel-pinkdark dark:text-pink-300 bg-pastel-pinklight/60 dark:bg-pink-950/40 border border-pastel-pink/30 flex items-center space-x-1.5 shadow-2xs";
+          }
+        } else {
+          if (secElement) {
+            secElement.classList.remove("opacity-100");
+            secElement.classList.add("opacity-0");
+            secElement.classList.add("hidden");
+          }
+
+          if (navElement) {
+            navElement.className = "px-3.5 py-2 rounded-xl text-xs lg:text-sm font-bold transition-all duration-200 text-pastel-gray dark:text-slate-400 hover:text-pastel-pinkdark dark:hover:text-pink-300 hover:bg-pastel-rose dark:hover:bg-slate-800 flex items-center space-x-1.5";
+          }
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const iconElement = document.getElementById("icon-mobile-menu");
+      if (!mobileMenu) return;
+
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        if (iconElement) iconElement.setAttribute("data-lucide", "x");
+      } else {
+        mobileMenu.classList.add("hidden");
+        if (iconElement) iconElement.setAttribute("data-lucide", "menu");
+      }
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    // ==================== RENDER: DATA PROFIL & AVATAR SECARA DINAMIS ====================
+    function renderProfile() {
+      const avatarSrc = profile.avatar || "avatar.png";
+      
+      const dashAvatar = document.getElementById("dashboard-avatar-img");
+      const profAvatar = document.getElementById("profile-avatar-img");
+      const editAvatarPrev = document.getElementById("edit-avatar-preview");
+      const detailAuthorAv = document.getElementById("detail-author-avatar");
+
+      if (dashAvatar) dashAvatar.src = avatarSrc;
+      if (profAvatar) profAvatar.src = avatarSrc;
+      if (editAvatarPrev) editAvatarPrev.src = avatarSrc;
+      if (detailAuthorAv) detailAuthorAv.src = avatarSrc;
+
+      const profName = document.getElementById("profile-name-title");
+      const profRole = document.getElementById("profile-role-title");
+      const footAuthor = document.getElementById("footer-author-name");
+      const detailAuthor = document.getElementById("detail-author-name");
+
+      if (profName) profName.innerText = profile.name;
+      if (profRole) profRole.innerText = profile.role;
+      if (footAuthor) footAuthor.innerText = profile.name;
+      if (detailAuthor) detailAuthor.innerText = profile.name;
+
+      const bioContainer = document.getElementById("profile-bio-content");
+      if (bioContainer) {
+        bioContainer.innerHTML = "";
+        (profile.bio || "").split('\n\n').forEach(paragraph => {
+          if (paragraph.trim()) {
+            const p = document.createElement("p");
+            p.innerText = paragraph;
+            bioContainer.appendChild(p);
+          }
+        });
+      }
+
+      const timelineContainer = document.getElementById("profile-school-timeline");
+      if (timelineContainer) {
+        timelineContainer.innerHTML = "";
+        (profile.history || []).forEach((edu, idx) => {
+          const dotBg = idx === 0 ? "bg-pastel-pink dark:bg-pink-500" : "bg-pastel-pinklight dark:bg-slate-700";
+          const item = document.createElement("div");
+          item.className = "flex items-start space-x-3 text-xs md:text-sm";
+          item.innerHTML = `
+            <div class="w-2.5 h-2.5 rounded-full ${dotBg} mt-1.5 shrink-0"></div>
+            <div>
+              <h4 class="font-bold text-pastel-slate dark:text-white">${edu.school}</h4>
+              <p class="text-xs text-pastel-gray dark:text-slate-400">${edu.period} | ${edu.desc}</p>
+            </div>
+          `;
+          timelineContainer.appendChild(item);
+        });
+      }
+
+      const skillsContainer = document.getElementById("profile-skills-container");
+      if (skillsContainer) {
+        skillsContainer.innerHTML = "";
+        const skillsMap = [
+          { label: "Informatika & Coding", val: (profile.skills && profile.skills.coding) || 85 },
+          { label: "Desain Grafis / UI/UX", val: (profile.skills && profile.skills.design) || 90 },
+          { label: "Bahasa Indonesia & Esai", val: (profile.skills && profile.skills.writing) || 80 },
+          { label: "Presentasi / Speaking", val: (profile.skills && profile.skills.presentation) || 75 }
+        ];
+        skillsMap.forEach(sk => {
+          const skillDiv = document.createElement("div");
+          skillDiv.className = "space-y-1.5";
+          skillDiv.innerHTML = `
+            <div class="flex justify-between text-xs font-bold">
+              <span class="text-pastel-slate dark:text-slate-350">${sk.label}</span>
+              <span class="text-pastel-pinkdark dark:text-pink-400">${sk.val}%</span>
+            </div>
+            <div class="h-2 w-full bg-pastel-rose dark:bg-slate-850 rounded-full overflow-hidden">
+              <div class="h-full bg-pastel-pink dark:bg-pink-500 rounded-full transition-all duration-500" style="width: ${sk.val}%"></div>
+            </div>
+          `;
+          skillsContainer.appendChild(skillDiv);
+        });
+      }
+
+      const socialContainer = document.getElementById("profile-social-container");
+      const footerSocialContainer = document.getElementById("footer-social-container");
+      if (socialContainer) socialContainer.innerHTML = "";
+      if (footerSocialContainer) footerSocialContainer.innerHTML = "";
+
+      const socials = [
+        { name: "Instagram", icon: "instagram", url: profile.instagram },
+        { name: "TikTok", icon: "music-2", url: profile.tiktok },
+        { name: "WhatsApp", icon: "message-circle", url: profile.whatsapp }
+      ];
+
+      socials.forEach(soc => {
+        if (soc.url && soc.url.trim() !== "") {
+          if (socialContainer) {
+            const profLink = document.createElement("a");
+            profLink.href = soc.url.trim();
+            profLink.target = "_blank";
+            profLink.rel = "noopener noreferrer";
+            profLink.className = "w-9 h-9 rounded-xl bg-pastel-rose dark:bg-slate-800 hover:bg-pastel-pinklight dark:hover:bg-slate-700 text-pastel-pinkdark dark:text-pink-300 flex items-center justify-center transition-all shadow-2xs hover:scale-105";
+            profLink.title = soc.name;
+            profLink.innerHTML = `<i data-lucide="${soc.icon}" class="w-4.5 h-4.5"></i>`;
+            socialContainer.appendChild(profLink);
+          }
+
+          if (footerSocialContainer) {
+            const footLink = document.createElement("a");
+            footLink.href = soc.url.trim();
+            footLink.target = "_blank";
+            footLink.rel = "noopener noreferrer";
+            footLink.className = "text-pastel-gray dark:text-slate-400 hover:text-pastel-pinkdark dark:hover:text-pink-300 transition-colors p-1";
+            footLink.title = soc.name;
+            footLink.innerHTML = `<i data-lucide="${soc.icon}" class="w-4.5 h-4.5"></i>`;
+            footerSocialContainer.appendChild(footLink);
+          }
+        }
+      });
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    function previewProfileImage(event) {
+      if (!event.target || !event.target.files || !event.target.files[0]) return;
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        tempAvatarBase64 = e.target.result;
+        const prev = document.getElementById("edit-avatar-preview");
+        if (prev) prev.src = tempAvatarBase64;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function resetProfileImageToDefault() {
+      tempAvatarBase64 = "avatar.png";
+      const prev = document.getElementById("edit-avatar-preview");
+      if (prev) prev.src = "avatar.png";
+    }
+
+    function renderStats() {
+      const tot = document.getElementById("stat-total-posts");
+      const inf = document.getElementById("stat-info-posts");
+      const ind = document.getElementById("stat-indo-posts");
+
+      if (tot) tot.innerText = posts.length;
+      if (inf) inf.innerText = posts.filter(p => p.category === "informatika").length;
+      if (ind) ind.innerText = posts.filter(p => p.category === "bahasa_indonesia").length;
+    }
+
+    function renderRecentPosts() {
+      const container = document.getElementById("recent-posts-container");
+      if (!container) return;
+      container.innerHTML = "";
+
+      const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 4);
+
+      sortedPosts.forEach(post => {
+        const isInfo = post.category === "informatika";
+        const catBadgeClass = isInfo
+          ? "bg-pastel-blue dark:bg-blue-950/60 text-pastel-bluedark dark:text-blue-300 border-blue-100"
+          : "bg-pastel-purple dark:bg-purple-950/60 text-pastel-purpledark dark:text-purple-300 border-purple-100";
+        const catLabel = isInfo ? "Informatika" : "Bahasa Indonesia";
+
+        const card = document.createElement("div");
+        card.className = "glass-card rounded-2xl p-4 border border-pastel-pinklight/30 dark:border-slate-800 space-y-3 hover:shadow-md transition-all duration-300 flex flex-col justify-between";
+        card.innerHTML = `
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${catBadgeClass}">${catLabel}</span>
+              <span class="text-[10px] text-pastel-gray dark:text-slate-400 font-semibold">${formatDateString(post.date)}</span>
+            </div>
+            <h4 class="font-serif font-bold text-sm text-pastel-slate dark:text-white line-clamp-1">${post.title}</h4>
+            <p class="text-xs text-pastel-gray dark:text-slate-400 line-clamp-2 leading-relaxed">${post.summary}</p>
+          </div>
+          <div class="pt-2 border-t border-pastel-pinklight/20 dark:border-slate-850 flex items-center justify-between">
+            <span class="text-[10px] font-bold text-pastel-pinkdark dark:text-pink-300">${post.status || 'Materi Sekolah'}</span>
+            <button onclick="viewPost('${post.id}')" class="px-3 py-1 bg-pastel-pink hover:bg-pastel-pinkdark text-white rounded-lg text-xs font-bold transition-all flex items-center space-x-1 shadow-2xs">
+              <span>Baca</span>
+              <i data-lucide="arrow-right" class="w-3 h-3"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    function renderPostsGrid(category) {
+      const gridId = category === "informatika" ? "info-posts-grid" : "indo-posts-grid";
+      const emptyMsgId = category === "informatika" ? "info-empty-msg" : "indo-empty-msg";
+      const searchId = category === "informatika" ? "search-info" : "search-indo";
+
+      const grid = document.getElementById(gridId);
+      const emptyMsg = document.getElementById(emptyMsgId);
+      const searchInput = document.getElementById(searchId);
+
+      if (!grid) return;
+      grid.innerHTML = "";
+
+      const keyword = searchInput ? searchInput.value.toLowerCase().trim() : "";
+
+      const filtered = posts.filter(p => {
+        const matchCategory = p.category === category;
+        const matchSearch = (p.title || "").toLowerCase().includes(keyword) ||
+          (p.summary || "").toLowerCase().includes(keyword) ||
+          (p.status && p.status.toLowerCase().includes(keyword));
+        return matchCategory && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        if (emptyMsg) emptyMsg.classList.remove("hidden");
+      } else {
+        if (emptyMsg) emptyMsg.classList.add("hidden");
+        filtered.forEach(post => {
+          const isInfo = post.category === "informatika";
+          const catBadgeClass = isInfo
+            ? "bg-pastel-blue dark:bg-blue-950/60 text-pastel-bluedark dark:text-blue-300 border border-blue-100"
+            : "bg-pastel-purple dark:bg-purple-950/60 text-pastel-purpledark dark:text-purple-300 border border-purple-100";
+          const catLabel = isInfo ? "Informatika" : "Bahasa Indonesia";
+
+          const card = document.createElement("div");
+          card.className = "glass-card rounded-3xl p-5 border border-pastel-pinklight/30 dark:border-slate-800 space-y-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between group";
+
+          card.innerHTML = `
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-[10px] font-bold ${catBadgeClass}">${catLabel}</span>
+                <span class="text-[10px] font-semibold text-pastel-gray dark:text-slate-400 flex items-center space-x-1">
+                  <i data-lucide="calendar" class="w-3 h-3"></i>
+                  <span>${formatDateString(post.date)}</span>
+                </span>
+              </div>
+
+              <h3 class="font-serif font-black text-base md:text-lg text-pastel-slate dark:text-white group-hover:text-pastel-pinkdark dark:group-hover:text-pink-300 transition-colors line-clamp-2">
+                ${post.title}
+              </h3>
+
+              <p class="text-xs text-pastel-gray dark:text-slate-400 leading-relaxed line-clamp-3">
+                ${post.summary}
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-pastel-pinklight/20 dark:border-slate-800 flex items-center justify-between">
+              <span class="text-xs font-bold text-pastel-pinkdark dark:text-pink-300 px-2.5 py-0.5 rounded-lg bg-pastel-rose dark:bg-slate-800 border border-pastel-pinklight/30">
+                ${post.status || 'Materi'}
+              </span>
+
+              <div class="flex items-center space-x-2">
+                <button onclick="openEditPostModal('${post.id}')" title="Edit Postingan" class="p-1.5 rounded-lg text-pastel-gray hover:text-pastel-pinkdark dark:hover:text-pink-300 hover:bg-pastel-rose dark:hover:bg-slate-800 transition-all">
+                  <i data-lucide="edit-2" class="w-4 h-4"></i>
+                </button>
+                <button onclick="deletePost('${post.id}')" title="Hapus Postingan" class="p-1.5 rounded-lg text-pastel-gray hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/20 transition-all">
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                </button>
+                <button onclick="viewPost('${post.id}')" class="px-3.5 py-1.5 bg-pastel-pink hover:bg-pastel-pinkdark text-white rounded-xl text-xs font-bold transition-all flex items-center space-x-1 shadow-2xs">
+                  <span>Baca Selengkapnya</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </button>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    function filterPosts(category) {
+      renderPostsGrid(category);
+    }
+
+    // ==================== PARSER RICH MARKDOWN UNTUK ARTIKEL LENGKAP ====================
+    function renderRichMarkdown(text) {
+      if (!text) return "";
+      const lines = text.split('\n');
+      let html = "";
+      let inList = false;
+
+      lines.forEach(line => {
+        let trimmed = line.trim();
+        if (!trimmed) {
+          if (inList) { html += "</ul>"; inList = false; }
+          return;
+        }
+
+        const imgMatch = trimmed.match(/^!\[(.*?)\]\((.*?)\)/);
+        if (imgMatch) {
+          if (inList) { html += "</ul>"; inList = false; }
+          const altText = imgMatch[1] || 'Gambar Materi';
+          const imgUrl = imgMatch[2];
+          html += `
+            <div class="my-5 overflow-hidden rounded-2xl border border-pastel-pinklight/60 dark:border-slate-800 bg-white/80 dark:bg-slate-850/80 p-3 shadow-xs transition-all hover:shadow-md group">
+              <img src="${imgUrl}" alt="${altText}" class="w-full h-auto max-h-[460px] object-contain rounded-xl mx-auto cursor-pointer transition-transform duration-300 group-hover:scale-[1.01]" onerror="this.onerror=null; this.src='https://placehold.co/800x450/ffe3e8/d15e75?text=${encodeURIComponent(altText)}';" onclick="window.open('${imgUrl}', '_blank')">
+              ${altText ? `<p class="text-center text-[11px] font-semibold text-pastel-pinkdark dark:text-pink-300 mt-2.5 flex items-center justify-center space-x-1.5"><i data-lucide="image" class="w-3.5 h-3.5 inline"></i><span>${altText}</span></p>` : ''}
+            </div>
+          `;
+          return;
+        }
+
+        let formattedLine = trimmed.replace(/\*\*(.*?)\*\*/g, '<strong class="font-extrabold text-pastel-slate dark:text-white">$1</strong>');
+        formattedLine = formattedLine.replace(/`(.*?)`/g, '<code class="px-1.5 py-0.5 rounded bg-pastel-pinklight/50 dark:bg-pink-950/60 text-pastel-pinkdark dark:text-pink-300 text-xs font-mono">$1</code>');
+
+        if (trimmed.startsWith('# ')) {
+          if (inList) { html += "</ul>"; inList = false; }
+          html += `<h2 class="text-xl md:text-2xl font-serif font-black text-pastel-pinkdark dark:text-pink-300 mt-6 mb-3 pb-1.5 border-b border-pastel-pinklight/40 dark:border-slate-800 flex items-center space-x-2"><i data-lucide="book-open" class="w-5 h-5 text-pastel-pink shrink-0"></i><span>${formattedLine.slice(2)}</span></h2>`;
+        } else if (trimmed.startsWith('## ')) {
+          if (inList) { html += "</ul>"; inList = false; }
+          html += `<h3 class="text-base md:text-lg font-serif font-bold text-pastel-slate dark:text-pink-200 mt-5 mb-2 flex items-center space-x-1.5"><i data-lucide="chevron-right" class="w-4 h-4 text-pastel-pinkdark dark:text-pink-400 shrink-0"></i><span>${formattedLine.slice(3)}</span></h3>`;
+        } else if (trimmed.startsWith('### ')) {
+          if (inList) { html += "</ul>"; inList = false; }
+          html += `<h4 class="text-sm md:text-base font-bold text-pastel-pinkdark dark:text-pink-300 mt-3 mb-1">${formattedLine.slice(4)}</h4>`;
+        } else if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+          if (!inList) { html += '<ul class="list-disc list-inside space-y-1.5 my-2.5 text-xs md:text-sm pl-2">'; inList = true; }
+          html += `<li class="text-pastel-slate dark:text-slate-300">${formattedLine.slice(2)}</li>`;
+        } else if (/^\d+\.\s/.test(trimmed)) {
+          const content = formattedLine.replace(/^\d+\.\s/, '');
+          if (inList) { html += "</ul>"; inList = false; }
+          html += `<div class="flex items-start space-x-2 my-2 text-xs md:text-sm"><span class="font-bold text-pastel-pinkdark dark:text-pink-400 shrink-0">${trimmed.match(/^\d+\./)[0]}</span><div class="text-pastel-slate dark:text-slate-300">${content}</div></div>`;
+        } else {
+          if (inList) { html += "</ul>"; inList = false; }
+          html += `<p class="text-xs md:text-sm leading-relaxed text-pastel-slate/90 dark:text-slate-300 my-2.5">${formattedLine}</p>`;
+        }
+      });
+
+      if (inList) { html += "</ul>"; }
+      return html;
+    }
+
+    // ==================== VIEW & MODAL ARTIKEL DETAIL ====================
+    function viewPost(postId) {
+      const post = posts.find(p => p.id === postId);
+      if (!post) return;
+
+      const isInfo = post.category === "informatika";
+      const catBadge = document.getElementById("detail-category-badge");
+      if (catBadge) {
+        catBadge.innerText = isInfo ? "Informatika" : "Bahasa Indonesia";
+        catBadge.className = isInfo
+          ? "px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-pastel-blue text-pastel-bluedark dark:bg-blue-950 dark:text-blue-300"
+          : "px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-pastel-purple text-pastel-purpledark dark:bg-purple-950 dark:text-purple-300";
+      }
+
+      const statusEl = document.getElementById("detail-status-badge");
+      if (statusEl) {
+        if (post.status && post.status.trim() !== "") {
+          statusEl.innerText = post.status;
+          statusEl.classList.remove("hidden");
+        } else {
+          statusEl.classList.add("hidden");
+        }
+      }
+
+      const titleEl = document.getElementById("detail-title");
+      const dateEl = document.getElementById("detail-date");
+      if (titleEl) titleEl.innerText = post.title;
+      if (dateEl) dateEl.innerText = formatDateString(post.date);
+
+      const contentEl = document.getElementById("detail-content");
+      if (contentEl) contentEl.innerHTML = renderRichMarkdown(post.content);
+
+      const attachBox = document.getElementById("detail-attachment-box");
+      const attachLink = document.getElementById("detail-attachment-link");
+      if (attachBox && attachLink) {
+        if (post.link && post.link.trim() !== "") {
+          attachBox.classList.remove("hidden");
+          attachLink.href = post.link.trim();
+        } else {
+          attachBox.classList.add("hidden");
+        }
+      }
+
+      const viewModal = document.getElementById("modal-view-post");
+      if (viewModal) viewModal.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    function closeViewPostModal() {
+      const viewModal = document.getElementById("modal-view-post");
+      if (viewModal) viewModal.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // ==================== MODAL TAMBAH & EDIT POST ====================
+    function openAddPostModal() {
+      const titleEl = document.getElementById("post-modal-title");
+      const btnText = document.getElementById("post-save-btn-text");
+      const form = document.getElementById("form-add-post");
+      const editId = document.getElementById("post-edit-id");
+      const postDate = document.getElementById("post-date");
+
+      if (titleEl) titleEl.innerText = "Tulis Posting Tugas Baru";
+      if (btnText) btnText.innerText = "Simpan Posting";
+      if (form) form.reset();
+      if (editId) editId.value = "";
+      if (postDate) postDate.value = new Date().toISOString().split("T")[0];
+
+      const modal = document.getElementById("modal-add-post");
+      if (modal) modal.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    function openEditPostModal(postId) {
+      const post = posts.find(p => p.id === postId);
+      if (!post) return;
+
+      const titleEl = document.getElementById("post-modal-title");
+      const btnText = document.getElementById("post-save-btn-text");
+      if (titleEl) titleEl.innerText = "Edit Postingan Tugas";
+      if (btnText) btnText.innerText = "Simpan Perubahan";
+
+      const editId = document.getElementById("post-edit-id");
+      const pTitle = document.getElementById("post-title");
+      const pCat = document.getElementById("post-category");
+      const pDate = document.getElementById("post-date");
+      const pStatus = document.getElementById("post-status");
+      const pLink = document.getElementById("post-link");
+      const pSum = document.getElementById("post-summary");
+      const pCont = document.getElementById("post-content");
+
+      if (editId) editId.value = post.id;
+      if (pTitle) pTitle.value = post.title || "";
+      if (pCat) pCat.value = post.category || "informatika";
+      if (pDate) pDate.value = post.date || "";
+      if (pStatus) pStatus.value = post.status || "";
+      if (pLink) pLink.value = post.link || "";
+      if (pSum) pSum.value = post.summary || "";
+      if (pCont) pCont.value = post.content || "";
+
+      const modal = document.getElementById("modal-add-post");
+      if (modal) modal.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    function closeAddPostModal() {
+      const modal = document.getElementById("modal-add-post");
+      if (modal) modal.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    function handleSavePost(event) {
+      if (event) event.preventDefault();
+      const editId = document.getElementById("post-edit-id") ? document.getElementById("post-edit-id").value : "";
+      const title = document.getElementById("post-title") ? document.getElementById("post-title").value.trim() : "";
+      const category = document.getElementById("post-category") ? document.getElementById("post-category").value : "informatika";
+      const date = document.getElementById("post-date") ? document.getElementById("post-date").value : "";
+      const status = document.getElementById("post-status") ? document.getElementById("post-status").value.trim() : "";
+      const link = document.getElementById("post-link") ? document.getElementById("post-link").value.trim() : "";
+      const summary = document.getElementById("post-summary") ? document.getElementById("post-summary").value.trim() : "";
+      const content = document.getElementById("post-content") ? document.getElementById("post-content").value.trim() : "";
+
+      if (!title || !summary || !content) {
+        alert("Mohon isi judul, ringkasan, dan isi materi postingan.");
+        return;
+      }
+
+      if (editId) {
+        const idx = posts.findIndex(p => p.id === editId);
+        if (idx !== -1) {
+          posts[idx] = { ...posts[idx], title, category, date, status, link, summary, content };
+        }
+      } else {
+        const newPost = {
+          id: Date.now().toString(),
+          title, category, date, status, link, summary, content
+        };
+        posts.unshift(newPost);
+      }
+
+      savePosts();
+      closeAddPostModal();
+    }
+
+    function deletePost(postId) {
+      if (confirm("Apakah Anda yakin ingin menghapus postingan tugas ini?")) {
+        posts = posts.filter(p => p.id !== postId);
+        savePosts();
+      }
+    }
+
+    // ==================== MODAL EDIT PROFIL & SETTING FOTO ====================
+    function openEditProfileModal() {
+      tempAvatarBase64 = profile.avatar || "avatar.png";
+      
+      const eName = document.getElementById("edit-name");
+      const eRole = document.getElementById("edit-role");
+      const eBio = document.getElementById("edit-bio");
+      const ePrev = document.getElementById("edit-avatar-preview");
+      const eIg = document.getElementById("edit-instagram");
+      const eTt = document.getElementById("edit-tiktok");
+      const eWa = document.getElementById("edit-whatsapp");
+
+      if (eName) eName.value = profile.name || "";
+      if (eRole) eRole.value = profile.role || "";
+      if (eBio) eBio.value = profile.bio || "";
+      if (ePrev) ePrev.src = tempAvatarBase64;
+      if (eIg) eIg.value = profile.instagram || "";
+      if (eTt) eTt.value = profile.tiktok || "";
+      if (eWa) eWa.value = profile.whatsapp || "";
+
+      const sCoding = profile.skills ? profile.skills.coding : 85;
+      const sDesign = profile.skills ? profile.skills.design : 90;
+      const sWriting = profile.skills ? profile.skills.writing : 80;
+      const sPres = profile.skills ? profile.skills.presentation : 75;
+
+      const eCod = document.getElementById("edit-skill-coding");
+      const eDes = document.getElementById("edit-skill-design");
+      const eWri = document.getElementById("edit-skill-writing");
+      const ePre = document.getElementById("edit-skill-pres");
+
+      if (eCod) eCod.value = sCoding;
+      if (eDes) eDes.value = sDesign;
+      if (eWri) eWri.value = sWriting;
+      if (ePre) ePre.value = sPres;
+
+      const vCod = document.getElementById("val-coding");
+      const vDes = document.getElementById("val-design");
+      const vWri = document.getElementById("val-writing");
+      const vPre = document.getElementById("val-pres");
+
+      if (vCod) vCod.innerText = sCoding + '%';
+      if (vDes) vDes.innerText = sDesign + '%';
+      if (vWri) vWri.innerText = sWriting + '%';
+      if (vPre) vPre.innerText = sPres + '%';
+
+      const modal = document.getElementById("modal-edit-profile");
+      if (modal) modal.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    function closeEditProfileModal() {
+      const modal = document.getElementById("modal-edit-profile");
+      if (modal) modal.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    function handleSaveProfile(event) {
+      if (event) event.preventDefault();
+      const eName = document.getElementById("edit-name");
+      const eRole = document.getElementById("edit-role");
+      const eBio = document.getElementById("edit-bio");
+      const eIg = document.getElementById("edit-instagram");
+      const eTt = document.getElementById("edit-tiktok");
+      const eWa = document.getElementById("edit-whatsapp");
+
+      if (eName && eName.value.trim()) profile.name = eName.value.trim();
+      if (eRole) profile.role = eRole.value.trim();
+      if (eBio) profile.bio = eBio.value.trim();
+
+      if (tempAvatarBase64) {
+        profile.avatar = tempAvatarBase64;
+      }
+
+      if (eIg) profile.instagram = eIg.value.trim();
+      if (eTt) profile.tiktok = eTt.value.trim();
+      if (eWa) profile.whatsapp = eWa.value.trim();
+
+      const eCod = document.getElementById("edit-skill-coding");
+      const eDes = document.getElementById("edit-skill-design");
+      const eWri = document.getElementById("edit-skill-writing");
+      const ePre = document.getElementById("edit-skill-pres");
+
+      profile.skills = {
+        coding: eCod ? parseInt(eCod.value, 10) : 85,
+        design: eDes ? parseInt(eDes.value, 10) : 90,
+        writing: eWri ? parseInt(eWri.value, 10) : 80,
+        presentation: ePre ? parseInt(ePre.value, 10) : 75
+      };
+
+      safeLocalStorageSet("grace_portfolio_profile", JSON.stringify(profile));
+      renderProfile();
+      closeEditProfileModal();
+    }
+
+    // ==================== STICKY NOTES PENGINGAT BELAJAR ====================
+    function renderStickyNotes() {
+      const container = document.getElementById("sticky-notes-container");
+      if (!container) return;
+      container.innerHTML = "";
+
+      stickyNotes.forEach(note => {
+        const noteDiv = document.createElement("div");
+        noteDiv.className = `p-3 rounded-2xl border ${note.color} flex items-center justify-between text-xs font-semibold shadow-2xs group transition-all duration-200`;
+        noteDiv.innerHTML = `
+          <span>${note.text}</span>
+          <button onclick="deleteStickyNote('${note.id}')" title="Hapus catatan" class="opacity-60 group-hover:opacity-100 hover:text-red-600 ml-2 p-1">
+            <i data-lucide="x" class="w-3.5 h-3.5"></i>
+          </button>
+        `;
+        container.appendChild(noteDiv);
+      });
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    function addStickyNotePrompt() {
+      const text = prompt("Masukkan catatan pengingat belajar baru:");
+      if (text && text.trim() !== "") {
+        const colors = [
+          "bg-pink-100 dark:bg-pink-950/40 border-pink-200 dark:border-pink-900/30 text-pink-800 dark:text-pink-300",
+          "bg-purple-100 dark:bg-purple-950/40 border-purple-200 dark:border-purple-900/30 text-purple-800 dark:text-purple-300",
+          "bg-blue-100 dark:bg-blue-950/40 border-blue-200 dark:border-blue-900/30 text-blue-800 dark:text-blue-300"
+        ];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        stickyNotes.push({ id: Date.now().toString(), text: text.trim(), color: randomColor });
+        saveStickyNotes();
+      }
+    }
+
+    function deleteStickyNote(id) {
+      stickyNotes = stickyNotes.filter(n => n.id !== id);
+      saveStickyNotes();
+    }
+
+    // ==================== JADWAL PELAJARAN KELAS 11.3 (5 GRID BESAR) ====================
+    function getActiveMobileDay() {
+      const dayNum = new Date().getDay();
+      const dayMap = ["senin", "senin", "selasa", "rabu", "kamis", "jumat", "senin"];
+      return dayMap[dayNum];
+    }
+
+    function getScheduleTypeClasses(type) {
+      switch (type) {
+        case "science":
+          return "bg-blue-50/70 dark:bg-blue-950/40 text-blue-800 dark:text-blue-300 border border-blue-100/50 dark:border-blue-900/30";
+        case "social":
+          return "bg-purple-50/70 dark:bg-purple-950/40 text-purple-800 dark:text-purple-300 border border-purple-100/50 dark:border-purple-900/30";
+        case "language":
+          return "bg-pink-50/70 dark:bg-pink-950/30 text-pink-850 dark:text-pink-300 border border-pink-100/50 dark:border-pink-900/20";
+        case "break":
+          return "bg-slate-50/80 dark:bg-slate-900/40 text-slate-600 dark:text-slate-400 border border-slate-100/70 dark:border-slate-800/40";
+        case "practice":
+        default:
+          return "bg-emerald-50/70 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-100/50 dark:border-emerald-900/30";
+      }
+    }
+
+    function renderSchedule5Grid() {
+      const container = document.getElementById("schedule-5grid-container");
+      if (!container) return;
+
+      container.innerHTML = "";
+
+      const days = ["senin", "selasa", "rabu", "kamis", "jumat"];
+      const dayIcons = {
+        senin: "🌸",
+        selasa: "🌼",
+        rabu: "🌿",
+        kamis: "✨",
+        jumat: "💫"
+      };
+
+      days.forEach(day => {
+        const card = document.createElement("div");
+        card.id = `card-day-${day}`;
+        const isSelected = activeMobileDay === day;
+        const mobileHiddenClass = isSelected ? "" : "hidden";
+
+        card.className = `${mobileHiddenClass} md:block day-card glass-card rounded-3xl p-4 border border-pastel-pinklight/40 dark:border-slate-800 space-y-3 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between`;
+        const lessons = scheduleData[day] || [];
+        let lessonsHtml = "";
+        lessons.forEach(l => {
+          const typeClass = getScheduleTypeClasses(l.type);
+          lessonsHtml += `
+            <div class="flex items-center justify-between p-2 rounded-xl border ${typeClass} text-xs transition-all hover:scale-[1.01]">
+              <div class="space-y-0.5 min-w-0">
+                <p class="font-extrabold truncate text-[11px]">${l.name}</p>
+                <p class="text-[10px] opacity-75 flex items-center space-x-1">
+                  <i data-lucide="clock" class="w-3 h-3 shrink-0"></i>
+                  <span>${l.time}</span>
+                </p>
+              </div>
+            </div>
+          `;
+        });
+
+        const capitalizedDay = day.charAt(0).toUpperCase() + day.slice(1);
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between border-b border-pastel-pinklight/30 dark:border-slate-800 pb-2 mb-2.5">
+              <h4 class="font-serif font-black text-sm md:text-base text-pastel-slate dark:text-white flex items-center space-x-1.5">
+                <span>${dayIcons[day]}</span>
+                <span>${capitalizedDay}</span>
+              </h4>
+              <span class="text-[10px] bg-pastel-rose dark:bg-slate-800 text-pastel-pinkdark dark:text-pink-300 px-2 py-0.5 rounded-lg font-bold border border-pastel-pinklight/30">${lessons.length} Sesi</span>
+            </div>
+            <div class="space-y-1.5 max-h-[480px] overflow-y-auto pr-1">
+              ${lessonsHtml}
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    function selectScheduleDay(day) {
+      activeMobileDay = day;
+      const days = ["senin", "selasa", "rabu", "kamis", "jumat"];
+      days.forEach(d => {
+        const btn = document.getElementById(`btn-day-${d}`);
+        const card = document.getElementById(`card-day-${d}`);
+        if (btn) {
+          if (d === day) {
+            btn.className = "px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 bg-pastel-pink text-white dark:bg-pink-500 shadow-2xs hover:scale-105";
+          } else {
+            btn.className = "px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 text-pastel-gray dark:text-slate-400 hover:bg-pastel-rose dark:hover:bg-slate-900";
+          }
+        }
+        if (card) {
+          if (d === day) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        }
+      });
+    }
+
+    function renderDashboardSchedule() {
+      const widget = document.getElementById("dashboard-schedule-widget");
+      if (!widget) return;
+
+      const daysMap = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+      const todayNum = new Date().getDay();
+      const todayNameIndo = daysMap[todayNum];
+      const dayKey = todayNameIndo.toLowerCase();
+      const isWeekend = todayNum === 0 || todayNum === 6;
+
+      let headerHtml = `
+        <div class="flex justify-between items-center border-b border-pastel-pinklight/20 dark:border-slate-800 pb-3">
+          <h3 class="text-sm font-bold tracking-wider text-pastel-pinkdark dark:text-pink-400 uppercase flex items-center space-x-2">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Jadwal Pelajaran Hari Ini</span>
+          </h3>
+          <span class="text-xs bg-pastel-rose dark:bg-pink-950/45 text-pastel-pinkdark dark:text-pink-300 px-3 py-1 rounded-full font-bold border border-pastel-pinklight/25 dark:border-slate-800 shadow-2xs">
+            🌸 ${todayNameIndo}
+          </span>
+        </div>
+      `;
+
+      if (isWeekend) {
+        widget.innerHTML = `
+          ${headerHtml}
+          <div class="flex flex-col items-center justify-center py-6 text-center space-y-2">
+            <span class="text-3xl">🌸</span>
+            <h4 class="font-serif font-bold text-base text-pastel-slate dark:text-white">Selamat Akhir Pekan!</h4>
+            <p class="text-xs text-pastel-gray dark:text-slate-400 max-w-xs leading-relaxed">
+              Waktunya beristirahat dan mengisi ulang energi. Selamat berlibur! ✨
+            </p>
+            <button onclick="switchTab('jadwal')" class="mt-2 text-xs font-bold text-pastel-pinkdark dark:text-pink-400 hover:underline">
+              Lihat Jadwal Pelajaran Mingguan →
+            </button>
+          </div>
+        `;
+        if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+        return;
+      }
+
+      const lessons = scheduleData[dayKey] || [];
+      let lessonsListHtml = "";
+      lessons.forEach(l => {
+        const typeClass = getScheduleTypeClasses(l.type);
+        lessonsListHtml += `
+          <div class="flex items-center justify-between p-2 rounded-xl border ${typeClass} text-[11px] transition-all hover:scale-[1.01]">
+            <span class="font-bold truncate mr-2">${l.name}</span>
+            <span class="opacity-75 shrink-0 font-sans flex items-center space-x-1">
+              <i data-lucide="clock" class="w-3 h-3"></i>
+              <span>${l.time}</span>
+            </span>
+          </div>
+        `;
+      });
+
+      widget.innerHTML = `
+        ${headerHtml}
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
+          ${lessonsListHtml}
+        </div>
+        <div class="flex justify-end pt-1">
+          <button onclick="switchTab('jadwal')" class="text-xs font-bold text-pastel-pinkdark dark:text-pink-400 hover:underline flex items-center space-x-1">
+            <span>Lihat Jadwal Selengkapnya (5 Grid Besar)</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      `;
+      if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    }
+
+    // ==================== HELPER FORMAT TANGGAL INDONESIA (BEBAS SHIFT TIMEZONE) ====================
+    function formatDateString(dateStr) {
+      if (!dateStr) return "";
+      if (typeof dateStr === "string" && dateStr.includes("-")) {
+        const parts = dateStr.split("-");
+        if (parts.length === 3) {
+          const year = parseInt(parts[0], 10);
+          const month = parseInt(parts[1], 10) - 1;
+          const day = parseInt(parts[2], 10);
+          if (!isNaN(year) && !isNaN(month) && !isNaN(day)) {
+            const dateObj = new Date(year, month, day);
+            return dateObj.toLocaleDateString("id-ID", {
+              day: "numeric",
+              month: "long",
+              year: "numeric"
+            });
+          }
+        }
+      }
+      const dateObj = new Date(dateStr);
+      if (isNaN(dateObj.getTime())) return dateStr;
+      return dateObj.toLocaleDateString("id-ID", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+    }
+
+  </script>
+</body>
+</html>
